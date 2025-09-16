@@ -1,26 +1,289 @@
+/* font-family: "Nanum Pen Script", cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+/* font-family: poppins */
+@import url("https://use.typekit.net/ysf4qrp.css");
+
+/* font-family: "Mulish", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* Jakata Sans */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* font-family: "Geist", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+/* font-family: "Roboto", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair:wght@300;400;700;900&display=swap');
+
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --popover: white;
+    --popover-foreground: #000000;
+    --border: red;
+    --color-desktop: green;
+    --bg-accent: #f0f0f0;
+
+    --dull-red: #eb173a;
+    --maroon: #8b0e16;
+    --red: #ff0000;
+    --disabled-red: #FDAAB0;
+    --fade: #fd3a36;
+    --purple: #fbc7c9;
+    --white: #FFFFFF;
+    --black: #000000;
+    --light-black: #222;
+    --faded-black: #020817;
+    --light-gray: #f0f0f0;
+    --faded-blue: #f9f7f7;
+    --border-color: #e2e8f0;
+    --textbox-border: #878787;
+    --off-white: #FAF9F6;
+    --dark-gray: #808080;
+    --yellow: #F6D500;
+    --excel-green: #217346;
+    --selected-yellow: #ffff66;
+    --placeholder: #9F9F9F;
+    --gray: #7E84A3;
+    --pale-green: #A4EB17;
+    --primary-blue: #0058FF;
+    --orange: #f2a20d;
+    --disabled-red: #FDAAB0;
+    --hover-red: #BF102D;
+    --btn-bg-gray: #f3f4f6;
+    --hover-btn-blue: #e6f0ff;
+    --btn-border: #d1d5db;
+
+    /* #110604 */
+
+    --fs-6: 0.6rem;
+    --fs-65: 0.65rem;
+    --fs-7: 0.65rem;
+    --fs-75: 0.65rem;
+    --fs-8: 0.8rem;
+    --fs-85: 0.85rem;
+    --fs-875: 0.875rem;
+    --fs-9: 0.9rem;
+    --fs-95: 0.95rem;
+    --fs-1: 1rem;
+
+    --lh-7: 1rem; /* 16px */
+    --lh-8: 1rem; /* 20px */
+    --lh-10: 1.25rem; /* 28px */
+
+    --ff-pf: "Playfair", serif;
+  }
+
+  .dark {
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
+:root {
+  --radius: 0.65rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  background-color: var(--white);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+
+/* ::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 5px;
+  background-color: var(--light-gray);
+} */
+
+/* In your global CSS file */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: transparent; /* Make the scrollbar area transparent by default */
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: transparent; /* Make the track transparent by default */
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: transparent; /* Make the thumb transparent by default */
+  transition: background-color 0.3s ease; /* Smooth transition for the thumb color */
+}
+
+/* When the entire scrollable element is hovered, make the thumb visible */
+/* You'll need to apply this to the actual element that scrolls, not globally for ::-webkit-scrollbar-thumb */
+/* Example: Assuming you have a class 'scrollable-container' */
+.scrollable-container:hover::-webkit-scrollbar-thumb {
+  background-color: var(--light-gray); /* Make it visible on hover */
+}
+
+/* For Firefox (less direct control over thumb on hover without JavaScript) */
+/* You'll need to apply this to the actual element that scrolls */
+.scrollable-container {
+  scrollbar-width: thin; /* Or 'auto' */
+  scrollbar-color: transparent transparent; /* Thumb and track color transparent by default */
+}
+
+.scrollable-container:hover {
+  scrollbar-color: var(--light-gray) transparent; /* Make thumb visible on hover */
+}
+
+/* For Internet Explorer and older Edge (less granular control) */
+/* This typically doesn't support the 'hover to show' effect well without JS */
+/* If you just want it hidden by default, use -ms-overflow-style: none as in Scenario 1 */
+
+@media screen and (min-width: 280px) {
+  /* 320px — 480px: Mobile devices */
+}
+
+@media screen and (min-width: 360px) {
+  /* 481px — 768px: iPads, Tablets */
+}
+  
+@media screen and (min-width: 481px) {
+  /* 481px — 768px: iPads, Tablets */
+}
+
+@media screen and (min-width: 769px) {
+  /* 769px — 1023px: Small screens, laptops */
+  :root {
+    --fs-75: 0.75rem;
+    --fs-7: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* 1201px and more —  Extra large screens, TV */
+}
+
+.noScroll {
+  overflow: hidden;
 }
