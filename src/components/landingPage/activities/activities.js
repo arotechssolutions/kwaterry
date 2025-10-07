@@ -1,7 +1,16 @@
-import { Button } from "@/components/ui/button";
-import drummingNight from "../../../../public/drumming_night.jpg";
-import { Music, Mountain, Flame, MapPin } from "lucide-react";
-import styles from "./activities.module.css";
+import Image from "next/image"
+
+// Shadcn UI
+import { Button } from "@/components/ui/button"
+
+// Styles
+import styles from "./activities.module.css"
+
+// Assets : Images
+import drummingNight from "../../../../public/drumming_night.jpg"
+
+// Assets : Icons
+import { Music, Mountain, Flame, MapPin } from "lucide-react"
 
 const Activities = () => {
   const activities = [
@@ -29,7 +38,7 @@ const Activities = () => {
       duration: "4 hours",
       time: "Evening (6-10 PM)"
     }
-  ];
+  ]
 
   return (
     <section id="visit" className={styles.activitiesSection}>
@@ -46,49 +55,45 @@ const Activities = () => {
 
         {/* Activities Grid */}
         <div className={styles.activitiesGrid}>
-          {activities.map((activity, index) => (
-            <div
-              key={index}
-              className={styles.activityCard}
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              {/* Image/Icon Header */}
-              <div className={styles.activityImageWrapper}>
-                {activity.image ? (
-                  <img 
-                    src={activity.image}
-                    alt={activity.title}
-                    className={styles.activityImage}
-                  />
-                ) : (
-                  <div className={styles.activityIconWrapper}>
-                    <activity.icon size={64} className={styles.activityIcon} />
+          {
+            activities.map((activity, index) => (
+              <div key={index} className={styles.activityCard} style={{ animationDelay: `${index * 0.2}s` }}>
+                {/* Image/Icon Header */}
+                <div className={styles.activityImageWrapper}>
+                  {
+                    activity.image ? (
+                      <Image  src={activity.image} alt={activity.title} className={styles.activityImage} />
+                    ) : (
+                      <div className={styles.activityIconWrapper}>
+                        <activity.icon size={64} className={styles.activityIcon} />
+                      </div>
+                    )
+                  }
+                  <div className={styles.imageOverlay}></div>
+
+                  {/* Duration Badge */}
+                  <div className={styles.durationBadge}>{activity.duration}</div>
+                </div>
+
+                {/* Content */}
+                <div className={styles.activityContent}>
+                  <div className={styles.activityTitleWrapper}>
+                    <activity.icon size={24} className={styles.activityIconSmall} />
+                    <h3 className={styles.activityTitle}>{activity.title}</h3>
                   </div>
-                )}
-                <div className={styles.imageOverlay}></div>
 
-                {/* Duration Badge */}
-                <div className={styles.durationBadge}>{activity.duration}</div>
-              </div>
+                  <p className={styles.activityDescription}>{activity.description}</p>
 
-              {/* Content */}
-              <div className={styles.activityContent}>
-                <div className={styles.activityTitleWrapper}>
-                  <activity.icon size={24} className={styles.activityIconSmall} />
-                  <h3 className={styles.activityTitle}>{activity.title}</h3>
-                </div>
-
-                <p className={styles.activityDescription}>{activity.description}</p>
-
-                <div className={styles.activityFooter}>
-                  <span className={styles.activityTime}>{activity.time}</span>
-                  <Button variant="ghost" size="sm" className={styles.learnMoreButton}>
-                    Learn More →
-                  </Button>
+                  <div className={styles.activityFooter}>
+                    <span className={styles.activityTime}>{activity.time}</span>
+                    <Button variant="ghost" size="sm" className={styles.learnMoreButton}>
+                      Learn More →
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
 
         {/* Location & Contact */}
@@ -129,7 +134,7 @@ const Activities = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Activities;
+export default Activities

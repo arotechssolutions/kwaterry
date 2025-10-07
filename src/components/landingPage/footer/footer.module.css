@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(to bottom right, var(--color-primary), var(--color-earth), var(--color-primary));
+  background: linear-gradient(to bottom right, #5C3A21, #804830, #5C3A21);
   color: var(--primary-foreground);
   position: relative;
   overflow: hidden;

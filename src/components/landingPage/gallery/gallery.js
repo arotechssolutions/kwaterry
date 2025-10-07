@@ -1,15 +1,22 @@
 "use client"
 
-import { useState } from "react";
-import { X } from "lucide-react";
-import heroImage from "../../../../public/hero_kwaterry.jpg";
-import traditionalFood from "../../../../public/traditional_food.jpg";
-import terryPortrait from "../../../../public/terry_portrait.jpg";
-import drummingNight from "../../../../public/drumming_night.jpg";
-import styles from "./gallery.module.css";
+import { useState } from "react"
+import Image from "next/image"
+
+// Styles
+import styles from "./gallery.module.css"
+
+// Assets : Icons
+import { X } from "lucide-react"
+
+// Assets : Images
+import heroImage from "../../../../public/hero_kwaterry.jpg"
+import traditionalFood from "../../../../public/traditional_food.jpg"
+import terryPortrait from "../../../../public/terry_portrait.jpg"
+import drummingNight from "../../../../public/drumming_night.jpg"
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null)
 
   const galleryImages = [
     { src: heroImage, alt: "Traditional thatched huts at KwaTerry", category: "Accommodation" },
@@ -18,7 +25,7 @@ const Gallery = () => {
     { src: drummingNight, alt: "Traditional drumming and dancing", category: "Activities" },
     { src: heroImage, alt: "Rural Zimbabwean landscape", category: "Landscape" },
     { src: traditionalFood, alt: "Traditional cooking methods", category: "Culture" }
-  ];
+  ]
 
   return (
     <section id="gallery" className={styles.gallerySection}>
@@ -34,53 +41,41 @@ const Gallery = () => {
 
         {/* Gallery Grid */}
         <div className={styles.grid}>
-          {galleryImages.map((image, index) => (
-            <div
-              key={index}
-              className={styles.gridItem}
-              style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={() => setSelectedImage(image.src)}
-            >
-              <div className={styles.imageWrapper}>
-                <img src={image.src} alt={image.alt} className={styles.image} />
-              </div>
+          {
+            galleryImages.map((image, index) => (
+              <div key={index} className={styles.gridItem} style={{ animationDelay: `${index * 0.1}s` }} onClick={() => setSelectedImage(image.src)}>
+                <div className={styles.imageWrapper}>
+                  <Image src={image.src} alt={image.alt} className={styles.image} />
+                </div>
 
-              {/* Overlay */}
-              <div className={styles.overlay}>
-                <div className={styles.overlayContent}>
-                  <span className={styles.overlayBadge}>{image.category}</span>
-                  <p className={styles.overlayText}>{image.alt}</p>
+                {/* Overlay */}
+                <div className={styles.overlay}>
+                  <div className={styles.overlayContent}>
+                    <span className={styles.overlayBadge}>{image.category}</span>
+                    <p className={styles.overlayText}>{image.alt}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
 
         {/* Lightbox Modal */}
-        {selectedImage && (
-          <div 
-            className={styles.lightbox}
-            onClick={() => setSelectedImage(null)}
-          >
-            <div className={styles.lightboxContent}>
-              <button
-                onClick={() => setSelectedImage(null)}
-                className={styles.lightboxClose}
-                aria-label="Close gallery"
-              >
-                <X size={32} />
-              </button>
-              <img
-                src={selectedImage}
-                alt="Gallery image"
-                className={styles.lightboxImage}
-              />
+        {
+          selectedImage && (
+            <div className={styles.lightbox} onClick={() => setSelectedImage(null)}>
+              <div className={styles.lightboxContent}>
+                <button onClick={() => setSelectedImage(null)} className={styles.lightboxClose} aria-label="Close gallery" >
+                  <X size={32} />
+                </button>
+                <Image src={selectedImage} alt="Gallery image" className={styles.lightboxImage} />
+              </div>
             </div>
-          </div>
-        )}
+          )
+        }
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Gallery;
+export default Gallery

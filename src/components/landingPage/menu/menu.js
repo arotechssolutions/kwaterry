@@ -1,11 +1,16 @@
 "use client"
 
-import { useState } from "react";
-import traditionalFood from "../../../../public/traditional_food.jpg";
-import styles from "./menu.module.css";
+import { useState } from "react"
+import Image from "next/image"
+
+// Styles
+import styles from "./menu.module.css"
+
+// Assets : Images
+import traditionalFood from "../../../../public/traditional_food.jpg"
 
 const Menu = () => {
-  const [hoveredDish, setHoveredDish] = useState(null);
+  const [hoveredDish, setHoveredDish] = useState(null)
 
   const dishes = [
     {
@@ -44,7 +49,7 @@ const Menu = () => {
       category: "Indigenous Superfoods",
       cultural: "From the mighty baobab trees, revered as the 'Tree of Life' in African tradition."
     }
-  ];
+  ]
 
   return (
     <section id="menu" className={styles.menuSection}>
@@ -61,7 +66,7 @@ const Menu = () => {
 
         {/* Featured Image */}
         <div className={styles.featuredImageWrapper}>
-          <img src={traditionalFood} alt="Traditional Zimbabwean dishes beautifully arranged" className={styles.featuredImage} />
+          <Image src={traditionalFood} alt="Traditional Zimbabwean dishes beautifully arranged" className={styles.featuredImage} />
           <div className={styles.featuredOverlay}></div>
           <div className={styles.featuredContent}>
             <h3 className={styles.featuredTitle}>Traditional Feast Experience</h3>
@@ -71,31 +76,32 @@ const Menu = () => {
 
         {/* Menu Grid */}
         <div className={styles.grid}>
-          {dishes.map((dish, index) => (
-            <div
-              key={index}
-              className={styles.gridItem}
-              style={{ animationDelay: `${index * 0.1}s` }}
-              onMouseEnter={() => setHoveredDish(index)}
-              onMouseLeave={() => setHoveredDish(null)}
-            >
-              <div className={styles.gridItemContent}>
-                <div className={styles.categoryRow}>
-                  <span className={styles.categoryBadge}>{dish.category}</span>
-                  <div className={styles.pulseDot}></div>
-                </div>
+          {
+            dishes.map((dish, index) => (
+              <div
+                key={index}
+                className={styles.gridItem}
+                style={{ animationDelay: `${index * 0.1}s` }}
+                onMouseEnter={() => setHoveredDish(index)}
+                onMouseLeave={() => setHoveredDish(null)}>
+                <div className={styles.gridItemContent}>
+                  <div className={styles.categoryRow}>
+                    <span className={styles.categoryBadge}>{dish.category}</span>
+                    <div className={styles.pulseDot}></div>
+                  </div>
 
-                <h3 className={styles.dishTitle}>{dish.name}</h3>
-                <p className={styles.dishDescription}>{dish.description}</p>
+                  <h3 className={styles.dishTitle}>{dish.name}</h3>
+                  <p className={styles.dishDescription}>{dish.description}</p>
 
-                {/* Cultural Context */}
-                <div className={`${styles.culturalContext} ${hoveredDish === index ? styles.show : ""}`}>
-                  <span className={styles.culturalLabel}>Cultural Significance</span>
-                  <p className={styles.culturalText}>{dish.cultural}</p>
+                  {/* Cultural Context */}
+                  <div className={`${styles.culturalContext} ${hoveredDish === index ? styles.show : ""}`}>
+                    <span className={styles.culturalLabel}>Cultural Significance</span>
+                    <p className={styles.culturalText}>{dish.cultural}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
 
         {/* Call to Action */}
@@ -109,7 +115,7 @@ const Menu = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu

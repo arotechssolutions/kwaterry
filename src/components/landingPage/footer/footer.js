@@ -1,10 +1,15 @@
-import { MapPin, Phone, Mail, Facebook, Instagram, Twitter } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import styles from "./footer.module.css";
+// Assets : Icons
+import { MapPin, Phone, Mail, Facebook, Instagram, Twitter } from "lucide-react"
+
+// Shadcn UI
+import { Button } from "@/components/ui/button"
+
+// Styles
+import styles from "./footer.module.css"
 
 const Footer = () => {
   return (
-    <footer id="contact" className={styles.footer}>
+    <section id="contact" className={styles.footer}>
       {/* African Pattern Background */}
       <div className={styles.africanPattern}></div>
 
@@ -35,16 +40,15 @@ const Footer = () => {
             <div className={styles.linkSection}>
               <h4 className={styles.linkTitle}>Quick Links</h4>
               <ul className={styles.linkList}>
-                {['Home', 'About Terry', 'Traditional Menu', 'Gallery', 'Activities', 'Reservations'].map((link) => (
-                  <li key={link}>
-                    <a 
-                      href={`#${link.toLowerCase().replace(' ', '-')}`}
-                      className={styles.linkItem}
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {
+                  ['Home', 'About Terry', 'Traditional Menu', 'Gallery', 'Activities', 'Reservations'].map((link) => (
+                    <li key={link}>
+                      <a  href={`#${link.toLowerCase().replace(' ', '-')}`} className={styles.linkItem}>
+                        { link }
+                      </a>
+                    </li>
+                  ))
+                }
               </ul>
             </div>
 
@@ -52,21 +56,16 @@ const Footer = () => {
             <div className={styles.linkSection}>
               <h4 className={styles.linkTitle}>Experiences</h4>
               <ul className={styles.linkList}>
-                {[
-                  'Traditional Cuisine',
-                  'Drumming Nights', 
-                  'Quad Biking',
-                  'Campfire Stories',
-                  'Cultural Tours',
-                  'Rural Accommodation'
-                ].map((experience) => (
-                  <li key={experience}>
-                    <span className={styles.experienceItem}>
-                      <div className={styles.experienceDot}></div>
-                      {experience}
-                    </span>
-                  </li>
-                ))}
+                {
+                  ['Traditional Cuisine', 'Drumming Nights',  'Quad Biking', 'Campfire Stories', 'Cultural Tours', 'Rural Accommodation'].map((experience) => (
+                    <li key={experience}>
+                      <span className={styles.experienceItem}>
+                        <div className={styles.experienceDot}></div>
+                        { experience }
+                      </span>
+                    </li>
+                  ))
+                }
               </ul>
             </div>
 
@@ -129,8 +128,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
-};
+    </section>
+  )
+}
 
-export default Footer;
+export default Footer

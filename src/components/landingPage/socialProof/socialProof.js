@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 import { Star, Users, Trophy, GraduationCap, Music, Camera } from "lucide-react";
 import celebritiesVisit from "../../../../public/celebrities_visit.jpg";
 import musiciansVisit from "../../../../public/musicians_visit.jpg";
@@ -74,7 +76,7 @@ const SocialProof = () => {
           <div className={styles.galleryGrid}>
             {guestGallery.map((guest, index) => (
               <div key={index} className={styles.galleryCard} style={{ animationDelay: `${index * 0.2}s` }}>
-                <img src={guest.image} alt={guest.title} className={styles.galleryImage} />
+                <Image src={guest.image} alt={guest.title} className={styles.galleryImage} />
                 <div className={styles.galleryOverlay}></div>
                 <div className={styles.galleryContent}>
                   <h4 className={styles.galleryCardTitle}>{guest.title}</h4>

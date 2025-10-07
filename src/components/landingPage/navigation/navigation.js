@@ -1,12 +1,18 @@
 "use client"
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import styles from "./navigation.module.css";
+import { useState } from "react"
+
+// Styles
+import styles from "./navigation.module.css"
+
+// Shadcn UI
+import { Button } from "@/components/ui/button"
+
+// Assets : Icons
+import { Menu, X } from "lucide-react"
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -15,7 +21,7 @@ const Navigation = () => {
     { name: "Gallery", href: "#gallery" },
     { name: "Visit", href: "#visit" },
     { name: "Contact", href: "#contact" },
-  ];
+  ]
 
   return (
     <nav className={styles.navbar}>
@@ -26,15 +32,13 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className={styles.desktopMenu}>
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className={styles.navLink}
-              >
-                {item.name}
-              </a>
-            ))}
+            {
+              navItems.map((item) => (
+                <a key={item.name} href={item.href} className={styles.navLink}>
+                  {item.name}
+                </a>
+              ))
+            }
           </div>
 
           {/* CTA Button */}
@@ -45,40 +49,35 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className={styles.mobileMenuButton}
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
+          <button className={styles.mobileMenuButton} onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className={styles.mobileMenu}>
-            <div className={styles.mobileMenuList}>
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={styles.mobileNavLink}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-              <div className={styles.mobileCTA}>
-                <Button variant="secondary" className={styles.mobileCTAButton}>
-                  Reserve Now
-                </Button>
+        {
+          isOpen && (
+            <div className={styles.mobileMenu}>
+              <div className={styles.mobileMenuList}>
+                {
+                  navItems.map((item) => (
+                    <a key={item.name} href={item.href} className={styles.mobileNavLink} onClick={() => setIsOpen(false)}>
+                      {item.name}
+                    </a>
+                  ))
+                }
+                <div className={styles.mobileCTA}>
+                  <Button variant="secondary" className={styles.mobileCTAButton}>
+                    Reserve Now
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )
+        }
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

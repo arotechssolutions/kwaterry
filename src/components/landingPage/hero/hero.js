@@ -1,20 +1,21 @@
-import { Button } from "@/components/ui/button";
-import heroImage from "../../../../public/hero_kwaterry.jpg";
-import styles from "./hero.module.css";
+import Image from "next/image"
+
+// Styles
+import styles from "./hero.module.css"
+
+// Shadcn UI
+import { Button } from "@/components/ui/button"
+
+// Assets : Images
+import heroImage from "../../../../public/hero_kwaterry.jpg"
 
 const Hero = () => {
   return (
     <section id="home" className={styles.heroSection}>
       {/* Background Image with Parallax */}
-      <div 
-        className={styles.parallax}
-        style={{
-          backgroundImage: `url(${heroImage})`,
-        }}
-      >
-        {/* Overlay */}
-        <div className={styles.overlay}></div>
-      </div>
+      <Image  src={heroImage} className={styles.parallax} />
+      {/* Overlay */}
+      {/* <div className={styles.overlay}></div> */}
 
       {/* Hero Pattern */}
       <div className={styles.heroPattern}></div>
@@ -30,19 +31,11 @@ const Hero = () => {
         </p>
 
         <div className={styles.buttonGroup}>
-          <Button 
-            variant="secondary" 
-            size="lg"
-            className={styles.reserveButton}
-          >
+          <Button variant="secondary" size="lg" className={styles.reserveButton}>
             Reserve Your Experience
           </Button>
           
-          <Button 
-            variant="outline" 
-            size="lg"
-            className={styles.learnButton}
-          >
+          <Button  variant="outline"  size="lg" className={styles.learnButton}>
             Learn More
           </Button>
         </div>
@@ -63,7 +56,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

@@ -1,5 +1,10 @@
-import terryPortrait from "../../../../public/terry_portrait.jpg";
-import styles from "./about.module.css";
+import Image from "next/image"
+
+// Assets : Images
+import terryPortrait from "../../../../public/terry_portrait.jpg"
+
+// Styles
+import styles from "./about.module.css"
 
 const About = () => {
   return (
@@ -9,11 +14,7 @@ const About = () => {
           {/* Image Side */}
           <div className={styles.imageWrapper}>
             <div className={styles.imageContainer}>
-              <img
-                src={terryPortrait}
-                alt="Terry - Your Cultural Host at KwaTerry"
-                className={styles.portraitImage}
-              />
+              <Image src={terryPortrait} alt="Terry - Your Cultural Host at KwaTerry" className={styles.portraitImage} />
               <div className={styles.imageOverlay}></div>
             </div>
 
@@ -41,7 +42,7 @@ const About = () => {
               </p>
 
               <p>
-                Every dish tells a story, every experience connects you to our heritage, and every visit leaves you with memories that last a lifetime. This is not just food; this is culture served with love.
+                Every dish tells a story, every experience connects you to our heritage, and every visit leaves you with memories that last a lifetime. This is not just food this is culture served with love.
               </p>
             </div>
 
@@ -64,7 +65,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About
