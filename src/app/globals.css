@@ -74,14 +74,17 @@
 
     --fs-6: 0.6rem;
     --fs-65: 0.65rem;
-    --fs-7: 0.65rem;
-    --fs-75: 0.65rem;
+    --fs-7: 0.75rem;
+    --fs-75: 0.75rem;
     --fs-8: 0.8rem;
     --fs-85: 0.85rem;
     --fs-875: 0.875rem;
     --fs-9: 0.9rem;
     --fs-95: 0.95rem;
     --fs-1: 1rem;
+    --fs-1125: 1.125rem;
+    --fs-125: 1.25rem;
+    --bgfs: 0.875rem;
 
     --lh-7: 1rem; /* 16px */
     --lh-8: 1rem; /* 20px */
@@ -208,28 +211,6 @@ a {
   }
 }
 
-
-/* ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: var(--light-gray);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  border-radius: 5px;
-  background-color: var(--light-gray);
-} */
-
-/* In your global CSS file */
-
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -286,6 +267,7 @@ a {
   :root {
     --fs-75: 0.75rem;
     --fs-7: 0.7rem;
+    --bgfs: 1rem;
   }
 }
 

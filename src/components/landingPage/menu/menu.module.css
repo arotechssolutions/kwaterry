@@ -23,7 +23,7 @@
   padding: 0.5rem 1rem;
   background-color: #bf684033; /* secondary/20 */
   color: #fbf6e9; /* secondary-foreground */
-  font-size: var(--fs-75); /* text-sm */
+  font-size: var(--bgfs); /* text-sm */
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -48,12 +48,12 @@
 }
 
 .headerSubtitle {
-  font-size: var(--fs-875);
-  font-family: var(--ff-int);
+  font-size: var(--fs-1);
+  font-family: var(--ff-gst);
   color: #9f7a60;
-  line-height: 1.75rem;
   max-width: 48rem;
   margin: 0 auto;
+  /* /* line-height: 1.75rem; */
 }
 
 /* Featured Image */
@@ -87,15 +87,14 @@
 }
 
 .featuredTitle {
-  font-family: var(--ff-pf);
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-family: var(--ff-gst);
+  font-size: var(--fs-125);
+  font-weight: 800;
 }
 
 .featuredText {
-  font-size: var(--fs-875);
-  font-family: var(--ff-int);
+  font-size: var(--fs-1);
+  font-family: var(--ff-gst);
   color: rgba(255,255,255,0.9);
 }
 
@@ -217,10 +216,10 @@
 }
 
 .ctaText {
-  font-size: var(--fs-875);
-  font-family: var(--ff-int);
+  font-size: var(--fs-1125);
+  font-family: var(--ff-gst);
   color: #9f7a60;
-  margin-bottom: 1.5rem;
+  /* /* margin-bottom: 1.5rem; */
 }
 
 .ctaHeadingWrapper {
@@ -233,7 +232,11 @@
   font-family: var(--ff-pf);
   font-size: var(--fs-1);
   font-weight: 600;
+
   color: #bf6840;
+  cursor: pointer;
+
+  text-decoration: underline;
 }
 
 .ctaLine {

@@ -18,22 +18,11 @@ const Footer = () => {
           <div className={styles.grid}>
             {/* Brand Section */}
             <div className={styles.brandSection}>
-              <h3 className={styles.brandTitle}>KwaTerry</h3>
+              <h3 className={styles.brandTitle}>About Us</h3>
               <p className={styles.brandDescription}>
                 Authentic Zimbabwean cultural experiences through traditional food, 
                 rural tourism, and heartfelt hospitality in the heart of Zimbabwe.
               </p>
-              <div className={styles.socialButtons}>
-                <Button variant="ghost" size="icon" className={styles.socialButton}>
-                  <Facebook size={20} />
-                </Button>
-                <Button variant="ghost" size="icon" className={styles.socialButton}>
-                  <Instagram size={20} />
-                </Button>
-                <Button variant="ghost" size="icon" className={styles.socialButton}>
-                  <Twitter size={20} />
-                </Button>
-              </div>
             </div>
 
             {/* Quick Links */}
@@ -71,36 +60,32 @@ const Footer = () => {
 
             {/* Contact Information */}
             <div className={styles.contactSection}>
-              <h4 className={styles.linkTitle}>Get in Touch</h4>
+              <h4 className={styles.linkTitle}>Contact</h4>
               <div className={styles.contactInfo}>
-                <div className={styles.contactRow}>
-                  <MapPin size={20} className={styles.contactIcon} />
+                {/* <div className={styles.contactRow}>
+                  <MapPin size={20} color="#e9c763" />
                   <div>
                     <p className={styles.contactText}>
-                      Rural Zimbabwe<br />
-                      Traditional Cultural Village<br />
-                      Authentic Experience Center
+                      Turf Mhondoro Ngezi, Village 6<br />
                     </p>
                   </div>
-                </div>
+                </div> */}
 
-                <div className={styles.contactRow}>
-                  <Phone size={20} className={styles.contactIcon} />
-                  <a href="tel:+263123456789" className={styles.contactLink}>
-                    +263 123 456 789
-                  </a>
-                </div>
-
-                <div className={styles.contactRow}>
-                  <Mail size={20} className={styles.contactIcon} />
-                  <a href="mailto:hello@kwaterry.zw" className={styles.contactLink}>
-                    hello@kwaterry.zw
-                  </a>
+                <div className={styles.socialButtons}>
+                  <Button variant="ghost" size="icon" className={styles.socialButton}>
+                    <Facebook size={20} />
+                  </Button>
+                  <Button variant="ghost" size="icon" className={styles.socialButton}>
+                    <Instagram size={20} />
+                  </Button>
+                  <Button variant="ghost" size="icon" className={styles.socialButton}>
+                    <Twitter size={20} />
+                  </Button>
                 </div>
               </div>
 
               {/* Newsletter */}
-              <div className={styles.newsletter}>
+              {/* <div className={styles.newsletter}>
                 <h5 className={styles.newsletterTitle}>Stay Connected</h5>
                 <p className={styles.newsletterText}>
                   Get updates on cultural events and special experiences.
@@ -108,7 +93,7 @@ const Footer = () => {
                 <Button variant="secondary" className={styles.newsletterButton}>
                   Subscribe to Newsletter
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -118,7 +103,7 @@ const Footer = () => {
           <div className={styles.container}>
             <div className={styles.bottomContent}>
               <p className={styles.bottomText}>
-                © 2024 KwaTerry. All rights reserved. Authentic Zimbabwean Cultural Experiences.
+                © 2025 KwaTerry. All rights reserved. Authentic Zimbabwean Cultural Experiences.
               </p>
               <div className={styles.bottomLinks}>
                 <a href="#" className={styles.bottomLink}>Privacy Policy</a>

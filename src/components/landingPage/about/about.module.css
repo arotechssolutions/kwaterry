@@ -95,7 +95,7 @@
   background-color: rgba(255,183,77,0.2); /* bg-accent/20 approximation */
   color: var(--accent-foreground);
   border-radius: 5px; /* rounded-full */
-  font-size: 0.875rem; /* text-sm */
+  font-size: var(--bgfs); /* text-sm */
   font-family: var(--ff-n);
   font-weight: 600;
   /* letter-spacing: 0.05em;  */
@@ -184,4 +184,10 @@
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
+}
+
+@media screen and (min-width: 1400px){
+  .statLabel {
+    font-size: var(--fs-1125);
+  }
 }

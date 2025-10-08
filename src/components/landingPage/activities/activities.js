@@ -10,7 +10,7 @@ import styles from "./activities.module.css"
 import drummingNight from "../../../../public/drumming_night.jpg"
 
 // Assets : Icons
-import { Music, Mountain, Flame, MapPin } from "lucide-react"
+import { Music, Lightbulb, Mountain, Flame, MapPin } from "lucide-react"
 
 const Activities = () => {
   const activities = [
@@ -87,7 +87,7 @@ const Activities = () => {
                   <div className={styles.activityFooter}>
                     <span className={styles.activityTime}>{activity.time}</span>
                     <Button variant="ghost" size="sm" className={styles.learnMoreButton}>
-                      Learn More →
+                      Learn More <Lightbulb size={12} color="#bf6840" />
                     </Button>
                   </div>
                 </div>
@@ -97,11 +97,10 @@ const Activities = () => {
         </div>
 
         {/* Location & Contact */}
-        <div className={styles.locationSection}>
+        {/* <div className={styles.locationSection}>
           <div className={styles.locationGrid}>
             <div className={styles.locationInfo}>
               <div className={styles.locationHeader}>
-                <MapPin className={styles.mapIcon} size={32} />
                 <h3 className={styles.locationHeading}>Visit KwaTerry</h3>
               </div>
 
@@ -131,7 +130,7 @@ const Activities = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

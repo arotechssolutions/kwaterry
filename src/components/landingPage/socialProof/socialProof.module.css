@@ -30,13 +30,12 @@
   align-items: center;
   gap: 0.5rem;
   color: #FFD700; /* golden */
-  /* font-size: var(--fs-75); */
-  /* font-weight: 500; */
+
   
   text-transform: uppercase;
   margin-bottom: 1rem;
 
-  font-size: var(--fs-75); /* text-sm */
+  font-size: var(--bgfs); /* text-sm */
   font-family: var(--ff-n);
   font-weight: 600;
   letter-spacing: 0.05em; /* tracking-wide */
@@ -70,7 +69,7 @@
 }
 
 .headerText {
-  font-size: var(--fs-875);
+  font-size: var(--fs-1125);
   font-family: var(--ff-int);
   color: #9f7a60;
   max-width: 42rem;
@@ -141,7 +140,7 @@
 .guestTitle {
   font-size: 1.25rem;
   font-family: var(--ff-pf);
-  color: var(--color-foreground);
+  color: #5c3b23;
   margin-bottom: 0.5rem;
 }
 
@@ -149,7 +148,6 @@
   font-size: var(--fs-75);
   font-family: var(--ff-int);
   color: #9f7a60;
-  /* line-height: 1.5rem; */
 }
 
 .bottomCTA {
@@ -167,21 +165,17 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #d9d1bf; /* golden */
-  font-size: var(--fs-75);
-  font-weight: 500;
-  font-family: var(--ff-int);
-  text-transform: uppercase;
-
-
+  color: #d9d1bf;
 }
 
 .bottomCTABadge > span {
-  color: #FFD700; /* golden */
-  font-size: var(--fs-75);
+  color: gold;
+  font-size: var(--fs-875);
   font-weight: 500;
-  font-family: var(--ff-n);
-  text-transform: uppercase;
+  font-family: var(--ff-gst);
+  text-transform: capitalize;
+  position: relative;
+  top: 1.2px;
 }
 
 /* Guest Gallery */
@@ -199,12 +193,11 @@
   align-items: center;
   gap: 0.5rem;
   color: #FFD700;
-  font-size: var(--fs-75);
+  font-size: var(--bgfs);
   font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 1rem;
 
-  font-size: var(--fs-75); /* text-sm */
   font-family: var(--ff-n);
   font-weight: 600;
   letter-spacing: 0.05em; /* tracking-wide */
@@ -278,8 +271,8 @@
 }
 
 .galleryCardTitle {
-  font-size: var(--fs-875);
-  font-family: var(--ff-p);
+  font-size: var(--fs-1);
+  font-family: var(--ff-gst);
   /* margin-bottom: 0.5rem; */
   transition: color 0.3s ease;
 }
@@ -289,8 +282,8 @@
 }
 
 .galleryCardDescription {
-  font-size: var(--fs-75);
-  font-family: var(--ff-p);
+  font-size: var(--fs-875);
+  font-family: var(--ff-gst);
   opacity: 0.9;
 }
 
