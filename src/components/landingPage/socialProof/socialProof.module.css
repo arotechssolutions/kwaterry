@@ -9,7 +9,7 @@
   position: absolute;
   inset: 0;
   opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: linear-gradient(90deg, #bf6840, #e9c763);
 }
 
 .container {
@@ -30,10 +30,21 @@
   align-items: center;
   gap: 0.5rem;
   color: #FFD700; /* golden */
-  font-size: 0.875rem;
-  font-weight: 500;
+  /* font-size: var(--fs-75); */
+  /* font-weight: 500; */
+  
   text-transform: uppercase;
   margin-bottom: 1rem;
+
+  font-size: var(--fs-75); /* text-sm */
+  font-family: var(--ff-n);
+  font-weight: 600;
+  letter-spacing: 0.05em; /* tracking-wide */
+
+  background: rgba(255, 183, 77, .2);
+  padding: 5px 12px;
+  border-radius: 5px;
+  backdrop-filter: blur(3px);
 }
 
 .icon {
@@ -55,12 +66,13 @@
 }
 
 .highlight {
-  color: var(--color-primary);
+  color: #5c3b23;
 }
 
 .headerText {
-  font-size: 1.125rem;
-  color: var(--color-muted-foreground);
+  font-size: var(--fs-875);
+  font-family: var(--ff-int);
+  color: #9f7a60;
   max-width: 42rem;
   margin: 0 auto;
 }
@@ -115,13 +127,14 @@
 .guestIcon {
   width: 2rem;
   height: 2rem;
-  color: var(--color-primary);
+  color: #5c3b23;
 }
 
 .guestCount {
   font-size: 1.875rem;
+  font-family: var(--ff-int);
   font-weight: 700;
-  color: var(--color-primary);
+  color: #5c3b23;
   margin-bottom: 0.5rem;
 }
 
@@ -133,9 +146,42 @@
 }
 
 .guestDescription {
-  font-size: 0.875rem;
-  color: var(--color-muted-foreground);
-  line-height: 1.5rem;
+  font-size: var(--fs-75);
+  font-family: var(--ff-int);
+  color: #9f7a60;
+  /* line-height: 1.5rem; */
+}
+
+.bottomCTA {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  top: 31px;
+}
+
+.bottomCTABadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #d9d1bf; /* golden */
+  font-size: var(--fs-75);
+  font-weight: 500;
+  font-family: var(--ff-int);
+  text-transform: uppercase;
+
+
+}
+
+.bottomCTABadge > span {
+  color: #FFD700; /* golden */
+  font-size: var(--fs-75);
+  font-weight: 500;
+  font-family: var(--ff-n);
+  text-transform: uppercase;
 }
 
 /* Guest Gallery */
@@ -153,10 +199,20 @@
   align-items: center;
   gap: 0.5rem;
   color: #FFD700;
-  font-size: 0.875rem;
+  font-size: var(--fs-75);
   font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 1rem;
+
+  font-size: var(--fs-75); /* text-sm */
+  font-family: var(--ff-n);
+  font-weight: 600;
+  letter-spacing: 0.05em; /* tracking-wide */
+
+  backdrop-filter: blur(3px);
+  background: rgba(255, 183, 77, .2);
+  border-radius: 5px;
+  padding: 5px 12px;
 }
 
 .galleryTitle {
@@ -179,7 +235,7 @@
 
 .galleryCard {
   position: relative;
-  border-radius: 1rem;
+  border-radius: 5px;
   overflow: hidden;
   aspect-ratio: 4/3;
   transition: all 0.5s ease;
@@ -222,9 +278,9 @@
 }
 
 .galleryCardTitle {
-  font-size: 1.25rem;
-  font-family: var(--ff-pf);
-  margin-bottom: 0.5rem;
+  font-size: var(--fs-875);
+  font-family: var(--ff-p);
+  /* margin-bottom: 0.5rem; */
   transition: color 0.3s ease;
 }
 
@@ -233,7 +289,8 @@
 }
 
 .galleryCardDescription {
-  font-size: 0.875rem;
+  font-size: var(--fs-75);
+  font-family: var(--ff-p);
   opacity: 0.9;
 }
 

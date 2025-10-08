@@ -13,6 +13,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  min-height: 100vh;
 }
 
 .overlay {
@@ -54,7 +55,8 @@
 }
 
 .heroSubtitle {
-  font-size: 1.25rem; /* text-xl */
+  font-size: var(--fs-875); /* text-xl */
+  font-family: var(--ff-int);
   color: rgba(255,255,255,0.9);
   margin-bottom: 2rem;
   max-width: 42rem; /* 2xl */
@@ -66,7 +68,7 @@
 
 @media (min-width: 768px) {
   .heroSubtitle {
-    font-size: 1.5rem; /* md:text-2xl */
+    font-size: var(--fs-1); /* md:text-2xl */
   }
 }
 
@@ -86,21 +88,24 @@
 }
 
 .reserveButton {
-  font-weight: 600;
-  font-size: 1.125rem; /* text-lg */
+  font-weight: 500;
+  font-size: var(--fs-75); /* text-lg */
+  font-family: var(--ff-n);
   padding: 1rem 2rem; /* px-8 py-4 */
-  box-shadow: 0 4px 6px rgba(251, 191, 36, 0.5); /* shadow-warm approximation */
+  background-color: #bf6840;
+  color: white;
   transition: all 0.3s ease;
 }
 
 .reserveButton:hover {
-  box-shadow: 0 4px 6px rgba(255, 87, 34, 0.5); /* shadow-earth approximation */
+  box-shadow: 0 4px 6px 5c3b23; /* shadow-earth approximation */
   transform: scale(1.05);
 }
 
 .learnButton {
-  font-weight: 600;
-  font-size: 1.125rem;
+  font-weight: 500;
+  font-size: var(--fs-75);
+  font-family: var(--ff-int);
   padding: 1rem 2rem;
   border: 1px solid rgba(255,255,255,0.3);
   color: #fff;
@@ -125,7 +130,7 @@
   background-color: rgba(255,255,255,0.1);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 9999px;
+  border-radius: 5px;
   padding: 0.75rem 1.5rem;
   color: #fff;
 }
@@ -139,12 +144,14 @@
 }
 
 .badgeText {
-  font-weight: 500;
+  font-weight: 700;
+  font-family: var(--ff-n);
+  font-size: 1.2rem;
 }
 
 .scrollIndicator {
   position: absolute;
-  bottom: 2rem;
+  bottom: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
   animation: bounce 2s infinite;

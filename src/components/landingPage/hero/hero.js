@@ -13,9 +13,9 @@ const Hero = () => {
   return (
     <section id="home" className={styles.heroSection}>
       {/* Background Image with Parallax */}
-      <Image  src={heroImage} className={styles.parallax} />
+      <Image  src={heroImage} className={styles.parallax} alt="hero-image" />
       {/* Overlay */}
-      {/* <div className={styles.overlay}></div> */}
+      <div className={styles.overlay}></div>
 
       {/* Hero Pattern */}
       <div className={styles.heroPattern}></div>
@@ -30,7 +30,7 @@ const Hero = () => {
           Discover the heart of Zimbabwe through traditional food, cultural immersion, and unforgettable rural experiences at KwaTerry.
         </p>
 
-        <div className={styles.buttonGroup}>
+        {/* <div className={styles.buttonGroup}>
           <Button variant="secondary" size="lg" className={styles.reserveButton}>
             Reserve Your Experience
           </Button>
@@ -38,7 +38,7 @@ const Hero = () => {
           <Button  variant="outline"  size="lg" className={styles.learnButton}>
             Learn More
           </Button>
-        </div>
+        </div> */}
 
         {/* Floating Badge */}
         <div className={styles.floatingBadgeWrapper}>

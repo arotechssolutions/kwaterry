@@ -22,9 +22,10 @@
   padding: 0.5rem 1rem; /* px-4 py-2 */
   background-color: rgba(34,197,94,0.2); /* success/20 */
   color: var(--success-foreground);
-  border-radius: 9999px;
-  font-size: 0.875rem;
+  border-radius: 5px;
+  font-size: var(--fs-75);
   font-weight: 600;
+  font-family: var(--ff-n);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -34,7 +35,7 @@
   font-family: var(--ff-pf);
   font-size: 2.25rem; /* text-4xl */
   font-weight: 700;
-  color: var(--color-primary);
+  color: #5c3b23;
   margin-bottom: 1.5rem;
 }
 
@@ -45,12 +46,12 @@
 }
 
 .subheading {
-  font-size: 1.25rem; /* text-xl */
-  color: var(--muted-foreground);
+  font-size: var(--fs-1); /* text-xl */
+  color: #9f7a60;
   max-width: 48rem;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.75rem;
+  /* line-height: 1.75rem; */
 }
 
 /* Activities Grid */
@@ -144,7 +145,7 @@
 }
 
 .activityIconSmall {
-  color: var(--color-secondary);
+  color: #bf6840;
 }
 
 .activityTitle {
@@ -155,7 +156,7 @@
 }
 
 .activityDescription {
-  color: var(--muted-foreground);
+  color: #9f7a60;
   line-height: 1.75rem;
 }
 
@@ -169,12 +170,12 @@
 
 .activityTime {
   font-size: 0.875rem;
-  color: var(--muted-foreground);
+  color: #9f7a60;
   font-weight: 500;
 }
 
 .learnMoreButton {
-  color: var(--color-secondary);
+  color: #bf6840;
 }
 
 .learnMoreButton:hover {
@@ -221,19 +222,19 @@
 }
 
 .mapIcon {
-  color: var(--color-secondary);
+  color: #bf6840;
 }
 
 .locationHeading {
   font-family: var(--ff-pf);
   font-size: 1.875rem; /* text-3xl */
   font-weight: 700;
-  color: var(--color-primary);
+  color: #5c3b23;
 }
 
 .locationDescription {
   font-size: 1.125rem;
-  color: var(--muted-foreground);
+  color: #9f7a60;
   line-height: 1.75rem;
 }
 
@@ -247,7 +248,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--muted-foreground);
+  color: #9f7a60;
 }
 
 .featureDot {
@@ -292,7 +293,7 @@
 }
 
 .planLabel {
-  color: var(--muted-foreground);
+  color: #9f7a60;
 }
 
 .planPrice {

@@ -18,6 +18,9 @@
 /* font-family: "Roboto", sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* font-family: "Inter", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair:wght@300;400;700;900&display=swap');
 
@@ -84,8 +87,14 @@
     --lh-8: 1rem; /* 20px */
     --lh-10: 1.25rem; /* 28px */
 
-    --ff-pf: "Playfair", serif;
-  }
+    --ff-pf: "Geist", sans-serif;
+    /* "Playfair", serif; */
+    --ff-int: poppins;
+    --ff-n: "Nanum Pen Script", cursive;
+    --ff-gst: "Geist", sans-serif;
+   }
+
+  /* "Inter", sans-serif */
 
   .dark {
     --chart-1: 220 70% 50%;

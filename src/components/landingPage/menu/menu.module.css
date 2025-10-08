@@ -1,8 +1,9 @@
 .menuSection {
   padding: 5rem 0;
   background-color: rgba(243, 244, 246, 0.3); /* muted/30 */
-  background-image: url('/african-pattern.svg');
+  /* background-image: url('/african-pattern.svg'); */
   background-repeat: repeat;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #5c3b230d 10px, #5c3b230d 20px);
 }
 
 .container {
@@ -20,21 +21,23 @@
 .headerBadge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: rgba(236, 72, 153, 0.2); /* secondary/20 */
-  color: #EC4899; /* secondary-foreground */
-  border-radius: 9999px;
-  font-size: 0.75rem;
+  background-color: #bf684033; /* secondary/20 */
+  color: #fbf6e9; /* secondary-foreground */
+  font-size: var(--fs-75); /* text-sm */
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 1rem;
+
+  border-radius: 5px;
+  font-family: var(--ff-n);
 }
 
 .headerTitle {
   font-family: var(--ff-pf);
   font-size: 2.25rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: #5c3b23;
   margin-bottom: 1.5rem;
 }
 
@@ -45,8 +48,9 @@
 }
 
 .headerSubtitle {
-  font-size: 1.125rem;
-  color: var(--color-muted-foreground);
+  font-size: var(--fs-875);
+  font-family: var(--ff-int);
+  color: #9f7a60;
   line-height: 1.75rem;
   max-width: 48rem;
   margin: 0 auto;
@@ -90,7 +94,8 @@
 }
 
 .featuredText {
-  font-size: 1rem;
+  font-size: var(--fs-875);
+  font-family: var(--ff-int);
   color: rgba(255,255,255,0.9);
 }
 
@@ -113,7 +118,7 @@
 }
 
 .gridItem {
-  background-color: var(--color-card);
+  background-color: #fbf6e9e6;
   border-radius: 1rem;
   box-shadow: 0 10px 15px rgba(0,0,0,0.1);
   overflow: hidden;
@@ -140,11 +145,12 @@
 
 .categoryBadge {
   padding: 0.25rem 0.75rem;
-  font-size: 0.625rem;
-  font-weight: 600;
-  border-radius: 0.375rem;
-  background-color: rgba(255, 199, 95, 0.2); /* accent/20 */
-  color: #FFC75F; /* accent-foreground */
+  font-size: var(--fs-75);
+  font-weight: 500;
+  font-family: var(--ff-int);
+  border-radius: 5px;
+  background-color: #e9c76333; /* accent/20 */
+  color: #5c3b23; /* accent-foreground */
 }
 
 .pulseDot {
@@ -162,15 +168,16 @@
 
 .dishTitle {
   font-family: var(--ff-pf);
-  font-size: 1.25rem;
+  font-size: var(--fs-1);
   font-weight: 700;
-  color: var(--color-card-foreground);
+  color: #5c3b23;
 }
 
 .dishDescription {
-  font-size: 1rem;
-  color: var(--color-muted-foreground);
-  line-height: 1.5rem;
+  font-size: var(--fs-75);
+  font-family: var(--ff-int);
+  color: #9f7a60;
+  /* line-height: 1.5rem; */
 }
 
 /* Cultural context */
@@ -193,12 +200,12 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-secondary);
+  color: #bf6840;
 }
 
 .culturalText {
   font-size: 0.875rem;
-  color: var(--color-muted-foreground);
+  color: #9f7a60;
   font-style: italic;
   margin-top: 0.25rem;
 }
@@ -210,8 +217,9 @@
 }
 
 .ctaText {
-  font-size: 1.125rem;
-  color: var(--color-muted-foreground);
+  font-size: var(--fs-875);
+  font-family: var(--ff-int);
+  color: #9f7a60;
   margin-bottom: 1.5rem;
 }
 
@@ -223,9 +231,9 @@
 
 .ctaHeading {
   font-family: var(--ff-pf);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-secondary);
+  font-size: var(--fs-1);
+  font-weight: 600;
+  color: #bf6840;
 }
 
 .ctaLine {

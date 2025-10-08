@@ -4,9 +4,9 @@
   left: 0;
   right: 0;
   z-index: 50;
-  background-color: #fbf6e9e6; /* bg-background/90 */
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border-color);
+  /* background-color: #fbf6e9e6;  */
+  /* backdrop-filter: blur(8px); */
+  /* border-bottom: 1px solid var(--border-color); */
 }
 
 .container {
@@ -22,11 +22,15 @@
   height: 4rem; /* h-16 */
 }
 
-.logo {
-  font-family: var(--ff-pf);
-  font-size: 1.5rem; /* text-2xl */
-  font-weight: 700;
+.logoImage {
   color: #5c3b23;
+
+  height: 50px;
+  width: 50px;
+
+  border-radius: 50%;
+  background-color: #fbf6e9e6; 
+  /* background-color: transparent; */
 }
 
 /* Desktop Menu */
@@ -38,11 +42,15 @@
   .desktopMenu {
     display: flex;
     gap: 2rem; /* space-x-8 */
+    position: relative;
+    top: 5px;
   }
 }
 
 .navLink {
+  font-family: var(--ff-int);
   font-weight: 500;
+  font-size: var(--fs-75);
   color: #5c3b23;
   transition: color 0.3s ease;
 }
@@ -63,9 +71,16 @@
 }
 
 .ctaButton {
-  font-weight: 600;
   background-color: #bf6840;
-  color: #ffffff;
+  color: var(--white);
+
+  font-weight: 700;
+  font-family: var(--ff-n);
+  font-size: 1rem;
+
+  border-radius: 5px;
+  padding: 0 16px;
+  height: 38px;
 }
 
 /* Mobile Menu Button */
@@ -102,7 +117,7 @@
 }
 
 .mobileNavLink:hover {
-  color: var(--color-secondary);
+  color: #bf6840;
 }
 
 .mobileCTA {
@@ -114,4 +129,36 @@
 .mobileCTAButton {
   width: 100%;
   font-weight: 600;
+}
+
+.socialButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialButton {
+  height: 30px;
+  width: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  
+  
+  /* background-color: transparent; */
+
+  transition: all 0.2s;
+
+
+  backdrop-filter: blur(8px);
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 5px;
+}
+
+.socialButton:hover {
+  background-color: rgba(255,255,255,0.1);
 }

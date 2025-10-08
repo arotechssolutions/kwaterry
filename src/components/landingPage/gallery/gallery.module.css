@@ -20,9 +20,10 @@
   padding: 0.5rem 1rem;
   background-color: rgba(255, 199, 95, 0.2); /* accent/20 */
   color: #FFC75F; /* accent-foreground */
-  border-radius: 9999px;
-  font-size: 0.75rem;
+  border-radius: 5px;
+  font-size: var(--fs-75);
   font-weight: 600;
+  font-family: var(--ff-n);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 1rem;
@@ -32,7 +33,7 @@
   font-family: var(--ff-pf);
   font-size: 2.25rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: #5c3b23;
   margin-bottom: 1.5rem;
 }
 
@@ -43,9 +44,9 @@
 }
 
 .headerSubtitle {
-  font-size: 1.125rem;
-  color: var(--color-muted-foreground);
-  line-height: 1.75rem;
+  font-size: var(--fs-1);
+  color: #9f7a60;
+  /* line-height: 1.75rem; */
   max-width: 48rem;
   margin: 0 auto;
 }
@@ -71,7 +72,7 @@
 .gridItem {
   position: relative;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 5px;
   box-shadow: 0 10px 15px rgba(0,0,0,0.1);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -128,6 +129,12 @@
   background-color: rgba(255,255,255,0.2);
   backdrop-filter: blur(4px);
   margin-bottom: 0.5rem;
+
+  font-size: 0.875rem; /* text-sm */
+  font-family: var(--ff-n);
+  font-weight: 600;
+  letter-spacing: 0.05em; /* tracking-wide */
+
 }
 
 .overlayText {

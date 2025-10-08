@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 
 // Styles
 import styles from "./navigation.module.css"
@@ -9,7 +10,10 @@ import styles from "./navigation.module.css"
 import { Button } from "@/components/ui/button"
 
 // Assets : Icons
-import { Menu, X } from "lucide-react"
+import { Menu, X,  Facebook, Instagram, Twitter } from "lucide-react"
+
+// Assets : Images
+import logoImage from "../../../../public/kwaterry_logo.png"
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -28,10 +32,10 @@ const Navigation = () => {
       <div className={styles.container}>
         <div className={styles.navbarInner}>
           {/* Logo */}
-          <div className={styles.logo}>KwaTerry</div>
+          <Image src={logoImage} alt="KwaTerry Logo" className={styles.logoImage} />
 
           {/* Desktop Navigation */}
-          <div className={styles.desktopMenu}>
+          {/* <div className={styles.desktopMenu}>
             {
               navItems.map((item) => (
                 <a key={item.name} href={item.href} className={styles.navLink}>
@@ -39,23 +43,35 @@ const Navigation = () => {
                 </a>
               ))
             }
-          </div>
+          </div> */}
 
           {/* CTA Button */}
-          <div className={styles.desktopCTA}>
+          {/* <div className={styles.desktopCTA}>
             <Button variant="secondary" className={styles.ctaButton}>
               Reserve Now
             </Button>
+          </div> */}
+
+          <div className={styles.socialButtons}>
+            <div className={styles.socialButton}>
+              <Facebook size={15} color="#ffffff" />
+            </div>
+            <div className={styles.socialButton}>
+              <Instagram size={15} color="#ffffff" />
+            </div>
+            <div className={styles.socialButton}>
+              <Twitter size={15} color="#ffffff" />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <button className={styles.mobileMenuButton} onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+          {/* <button className={styles.mobileMenuButton} onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </button> */}
         </div>
 
         {/* Mobile Navigation */}
-        {
+        {/* {
           isOpen && (
             <div className={styles.mobileMenu}>
               <div className={styles.mobileMenuList}>
@@ -74,7 +90,7 @@ const Navigation = () => {
               </div>
             </div>
           )
-        }
+        } */}
       </div>
     </nav>
   )
