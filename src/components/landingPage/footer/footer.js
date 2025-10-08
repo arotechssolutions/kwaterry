@@ -98,7 +98,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        { /*Bottom Bar */}
         <div className={styles.bottomBar}>
           <div className={styles.container}>
             <div className={styles.bottomContent}>
@@ -107,6 +107,7 @@ const Footer = () => {
               </p>
               <div className={styles.bottomLinks}>
                 <a href="#" className={styles.bottomLink}>Privacy Policy</a>
+                •
                 <a href="#" className={styles.bottomLink}>Terms of Service</a>
               </div>
             </div>

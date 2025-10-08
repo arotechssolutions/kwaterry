@@ -93,7 +93,7 @@
   display: inline-block;
   padding: 0.5rem 1rem; /* px-4 py-2 */
   background-color: rgba(255,183,77,0.2); /* bg-accent/20 approximation */
-  color: var(--accent-foreground);
+  color: #5c3b23;
   border-radius: 5px; /* rounded-full */
   font-size: var(--bgfs); /* text-sm */
   font-family: var(--ff-n);
@@ -106,7 +106,7 @@
 }
 
 .heading {
-  font-family: var(--ff-pf);
+  font-family: var(--ff-gst);
   font-size: 2.25rem; /* text-4xl */
   font-weight: 700;
   color: #5c3b23;
@@ -124,7 +124,7 @@
   flex-direction: column;
   gap: 1.5rem; /* space-y-6 */
   font-size: var(--fs-875); /* text-lg */
-  font-family: var(--ff-int);
+  font-family: var(--ff-gst);
   line-height: 1.75rem; /* leading-relaxed */
   color: #9f7a60;
 }
@@ -143,29 +143,29 @@
 }
 
 .statNumber {
-  font-family: var(--ff-pf);
+  font-family: var(--ff-gst);
   font-size: 1.875rem; /* text-3xl */
   font-weight: 700;
   color: #bf6840;
 }
 
 .statNumberSuccess {
-  font-family: var(--ff-pf);
+  font-family: var(--ff-gst);
   font-size: 1.875rem;
   font-weight: 700;
   color: #22c55e; /* success */
 }
 
 .statNumberAccent {
-  font-family: var(--ff-pf);
+  font-family: var(--ff-gst);
   font-size: 1.875rem;
   font-weight: 700;
-  color: var(--color-accent);
+  color: #e9c763;
 }
 
 .statLabel {
   font-size: var(--fs-875); /* text-sm */
-  font-family: var(--ff-int);
+  font-family: var(--ff-gst);
   color: #9f7a60;
   font-weight: 500;
 }

@@ -28,7 +28,8 @@ const About = () => {
             <div className={styles.headingWrapper}>
               <span className={styles.badge}>Meet Terry</span>
               <h2 className={styles.heading}>
-                From Farm to Table, From Tradition to Heart
+                From Farm to Table
+                {/* , From Tradition to Heart */}
               </h2>
             </div>
 

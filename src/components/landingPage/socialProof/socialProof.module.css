@@ -1,8 +1,10 @@
 .socialProofSection {
   padding: 5rem 0;
-  background: linear-gradient(135deg, #F59E0B, #EF4444); /* gradient-warm */
+  /* background: linear-gradient(135deg, #F59E0B, #EF4444);  */
   position: relative;
   overflow: hidden;
+
+  background: linear-gradient(90deg, #bf6840, #e9c763);
 }
 
 .bgPattern {
@@ -52,7 +54,7 @@
 }
 
 .headerTitle {
-  font-family: var(--ff-pf);
+  font-family: var(--ff-gst);
   font-size: 2.25rem;
   margin-bottom: 1.5rem;
   color: var(--color-foreground);
@@ -70,7 +72,7 @@
 
 .headerText {
   font-size: var(--fs-1125);
-  font-family: var(--ff-int);
+  font-family: var(--ff-gst);
   color: #9f7a60;
   max-width: 42rem;
   margin: 0 auto;
@@ -90,9 +92,9 @@
 }
 
 .guestCard {
-  background-color: rgba(255, 255, 255, 0.5);
+  background: #fbf6e980;
   backdrop-filter: blur(8px);
-  border-radius: 1rem;
+  border-radius: 5px;
   padding: 2rem;
   border: 1px solid rgba(0,0,0,0.1);
   transition: all 0.3s ease;
@@ -131,22 +133,22 @@
 
 .guestCount {
   font-size: 1.875rem;
-  font-family: var(--ff-int);
-  font-weight: 700;
+  font-family: var(--ff-gst);
+  font-weight: 800;
   color: #5c3b23;
   margin-bottom: 0.5rem;
 }
 
 .guestTitle {
   font-size: 1.25rem;
-  font-family: var(--ff-pf);
+  font-family: var(--ff-gst);
   color: #5c3b23;
   margin-bottom: 0.5rem;
 }
 
 .guestDescription {
-  font-size: var(--fs-75);
-  font-family: var(--ff-int);
+  font-size: var(--fs-875);
+  font-family: var(--ff-gst);
   color: #9f7a60;
 }
 
@@ -209,7 +211,7 @@
 }
 
 .galleryTitle {
-  font-family: var(--ff-pf);
+  font-family: var(--ff-gst);
   font-size: 1.875rem;
 }
 

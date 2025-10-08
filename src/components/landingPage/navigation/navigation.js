@@ -28,7 +28,7 @@ const Navigation = () => {
   ]
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={styles.navbar} style={{backgroundColor:"transparent !important", position:"absolute"}}>
       <div className={styles.container}>
         <div className={styles.navbarInner}>
           {/* Logo */}

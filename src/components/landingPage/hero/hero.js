@@ -3,9 +3,6 @@ import Image from "next/image"
 // Styles
 import styles from "./hero.module.css"
 
-// Shadcn UI
-import { Button } from "@/components/ui/button"
-
 // Assets : Images
 import heroImage from "../../../../public/hero_kwaterry.jpg"
 
