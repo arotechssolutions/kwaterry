@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section id="home" className={styles.heroSection}>
       {/* Background Image with Parallax */}
-      <Image  src={heroImage} className={styles.parallax} alt="hero-image" />
+      <Image  src={heroImage} className={styles.parallax} alt="hero-image" priority fill />
       {/* Overlay */}
       <div className={styles.overlay}></div>
 
