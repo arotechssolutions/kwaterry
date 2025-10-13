@@ -4,10 +4,10 @@ import Image from "next/image"
 import { Star, Users, Trophy, GraduationCap, Music, Camera } from "lucide-react"
 
 // Assets : Images
-import celebritiesVisit from "../../../../public/celebrities_visit.jpg"
+import celebritiesVisit from "../../../../public/babaharare.jpg"
 import musiciansVisit from "../../../../public/musicians_visit.jpg"
 import sportsTeamVisit from "../../../../public/sports_team_visit.jpg"
-import studentsVisit from "../../../../public/students_visit.jpg"
+import studentsVisit from "../../../../public/kidswithterry.jpg"
 
 // Styles
 import styles from "./socialProof.module.css"

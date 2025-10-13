@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 // Assets : Images
-import terryPortrait from "../../../../public/terry_portrait.jpg"
+import terryPortrait from "../../../../public/terryabout.jpg"
 
 // Styles
 import styles from "./about.module.css"

@@ -4,7 +4,8 @@ import Image from "next/image"
 import styles from "./hero.module.css"
 
 // Assets : Images
-import heroImage from "../../../../public/hero_kwaterry.jpg"
+import heroImage from "../../../../public/arealphoto.jpg"
+// hero_kwaterry
 
 const Hero = () => {
   return (
