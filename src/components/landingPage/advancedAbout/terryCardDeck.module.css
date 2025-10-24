@@ -39,6 +39,16 @@
   }
 }
 
+@media screen and (min-width: 1024px){
+  .cardStack {
+    max-width: 900px;
+  }
+
+  .deckContainer {
+    max-width: 900px;
+  }
+}
+
 @media screen and (min-width: 1300px){
   .cardStack {
     max-width: 1280px;
