@@ -85,6 +85,7 @@
     --fs-1125: 1.125rem;
     --fs-125: 1.25rem;
     --bgfs: 0.875rem;
+    --fs-hd: 2.25rem;
 
     --lh-7: 1rem; /* 16px */
     --lh-8: 1rem; /* 20px */
@@ -268,6 +269,7 @@ a {
     --fs-75: 0.75rem;
     --fs-7: 0.7rem;
     --bgfs: 1rem;
+    --fs-hd: 3rem;
   }
 }
 

@@ -55,15 +55,11 @@
 
 .headerTitle {
   font-family: var(--ff-gst);
-  font-size: 2.25rem;
+  font-size: var(--fs-hd);
+  font-weight: 500;
+
   margin-bottom: 1.5rem;
   color: var(--color-foreground);
-}
-
-@media (min-width: 768px) {
-  .headerTitle {
-    font-size: 3rem;
-  }
 }
 
 .highlight {
@@ -140,7 +136,7 @@
 }
 
 .guestTitle {
-  font-size: 1.25rem;
+  font-size: var(--fs-1125);
   font-family: var(--ff-gst);
   color: #5c3b23;
   margin-bottom: 0.5rem;
@@ -172,10 +168,13 @@
 
 .bottomCTABadge > span {
   color: gold;
-  font-size: var(--fs-875);
+  
+  font-size: var(--fs-1);
   font-weight: 500;
   font-family: var(--ff-gst);
+
   text-transform: capitalize;
+
   position: relative;
   top: 1.2px;
 }
@@ -212,11 +211,8 @@
 
 .galleryTitle {
   font-family: var(--ff-gst);
-  font-size: 1.875rem;
-}
-
-@media (min-width: 768px) {
-  .galleryTitle { font-size: 2.25rem; }
+  font-size: var(--fs-hd);
+  font-weight: 500;
 }
 
 .galleryGrid {

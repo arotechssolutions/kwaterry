@@ -6,13 +6,15 @@ import MenuSection from "@/components/landingPage/menu/menu";
 import GallerySection from "@/components/landingPage/gallery/gallery";
 import ActivitiesSection from "@/components/landingPage/activities/activities";
 import Footer from "@/components/landingPage/footer/footer";
+import AdvancedAbout from "@/components/landingPage/advancedAbout/about"
 
 const Index = () => {
   return (
     <main className="min-h-screen">
       <Navigation />
       <HeroSection />
-      <AboutSection />
+      <AdvancedAbout />
+      {/* <AboutSection /> */}
       <SocialProofSection />
       <MenuSection />
       <GallerySection />

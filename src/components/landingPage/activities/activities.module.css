@@ -33,26 +33,23 @@
 
 .heading {
   font-family: var(--ff-pf);
-  font-size: 2.25rem; /* text-4xl */
-  font-weight: 700;
-  color: #5c3b23;
-  margin-bottom: 1.5rem;
-}
+  font-size: var(--fs-hd);
+  font-weight: 500;
 
-@media (min-width: 768px) {
-  .heading {
-    font-size: 3.75rem; /* md:text-6xl */
-  }
+  color: #5c3b23;
+
+  margin-bottom: 1.5rem;
 }
 
 .subheading {
   font-size: var(--fs-1125);
   font-family: var(--ff-gst);
+
   color: #9f7a60;
+
   max-width: 48rem;
   margin-left: auto;
   margin-right: auto;
-  /* line-height: 1.75rem; */
 }
 
 /* Activities Grid */
@@ -156,9 +153,8 @@
   color: #5c3b23;
 
   font-family: var(--ff-gst);
-  color: #5c3b23;
-  font-size: 1.125rem;
-  font-weight: 700;
+  font-size: var(--fs-1);
+  font-weight: 500;
 }
 
 .activityDescription {

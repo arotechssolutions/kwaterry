@@ -31,16 +31,12 @@
 
 .headerTitle {
   font-family: var(--ff-pf);
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #5c3b23;
-  margin-bottom: 1.5rem;
-}
+  font-size: var(--fs-hd);
+  font-weight: 500;
 
-@media (min-width: 768px) {
-  .headerTitle {
-    font-size: 3.75rem;
-  }
+  color: #5c3b23;
+
+  margin-bottom: 1.5rem;
 }
 
 .headerSubtitle {

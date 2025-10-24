@@ -34,10 +34,12 @@
 }
 
 .headerTitle {
-  font-family: var(--ff-pf);
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-family: var(--ff-gst);
+  font-size: var(--fs-hd);
+  font-weight: 500;
+
   color: #5c3b23;
+
   margin-bottom: 1.5rem;
 }
 
@@ -48,7 +50,7 @@
 }
 
 .headerSubtitle {
-  font-size: var(--fs-1);
+  font-size: var(--fs-1125);
   font-family: var(--ff-gst);
   color: #9f7a60;
   max-width: 48rem;
@@ -88,8 +90,8 @@
 
 .featuredTitle {
   font-family: var(--ff-gst);
-  font-size: var(--fs-125);
-  font-weight: 800;
+  font-size: var(--fs-1125);
+  font-weight: 500;
 }
 
 .featuredText {
@@ -131,6 +133,7 @@
 
 .gridItemContent {
   padding: 1.5rem;
+
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -144,12 +147,15 @@
 
 .categoryBadge {
   padding: 0.25rem 0.75rem;
+
   font-size: var(--fs-75);
   font-weight: 500;
-  font-family: var(--ff-int);
+  font-family: var(--ff-gst);
+
   border-radius: 5px;
-  background-color: #e9c76333; /* accent/20 */
-  color: #5c3b23; /* accent-foreground */
+  background-color: #e9c76333; 
+
+  color: #5c3b23; 
 }
 
 .pulseDot {
@@ -168,15 +174,14 @@
 .dishTitle {
   font-family: var(--ff-pf);
   font-size: var(--fs-1);
-  font-weight: 700;
+  font-weight: 500;
   color: #5c3b23;
 }
 
 .dishDescription {
-  font-size: var(--fs-75);
-  font-family: var(--ff-int);
+  font-size: var(--fs-875);
+  font-family: var(--ff-gst);
   color: #9f7a60;
-  /* line-height: 1.5rem; */
 }
 
 /* Cultural context */
@@ -219,7 +224,6 @@
   font-size: var(--fs-1125);
   font-family: var(--ff-gst);
   color: #9f7a60;
-  /* /* margin-bottom: 1.5rem; */
 }
 
 .ctaHeadingWrapper {
@@ -230,8 +234,7 @@
 
 .ctaHeading {
   font-family: var(--ff-pf);
-  font-size: var(--fs-1);
-  font-weight: 600;
+  font-size: var(--fs-1125);
 
   color: #bf6840;
   cursor: pointer;

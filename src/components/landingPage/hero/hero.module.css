@@ -56,21 +56,20 @@
 }
 
 .heroSubtitle {
-  font-size: var(--fs-875); /* text-xl */
-  font-family: var(--ff-int);
+  font-size: var(--fs-1125);
+  font-family: var(--ff-gst);
+
   color: rgba(255,255,255,0.9);
-  margin-bottom: 2rem;
-  max-width: 42rem; /* 2xl */
-  line-height: 1.75rem; /* leading-relaxed */
+  
+  max-width: 42rem; 
+
+  line-height: 1.75rem; 
+
   margin-left: auto;
   margin-right: auto;
-  animation: fade-in-right 1s ease forwards;
-}
+  margin-bottom: 2rem;
 
-@media (min-width: 768px) {
-  .heroSubtitle {
-    font-size: var(--fs-1); /* md:text-2xl */
-  }
+  animation: fade-in-right 1s ease forwards;
 }
 
 .buttonGroup {
