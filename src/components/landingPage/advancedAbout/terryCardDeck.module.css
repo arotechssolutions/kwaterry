@@ -7,20 +7,46 @@
   margin-top: 4rem;
 }
 
-/* Final card stack (keep latest version) */
-.cardStack {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  max-width: 950px;
-}
-
 /* Card container and layout */
 .deckContainer {
   position: relative;
-  width: 100%;
-  max-width: 900px;
+  width: 450px;
+  /* max-width: 900px; */
+  max-width: 1280px;
+
   margin: 0 auto;
+}
+
+/* Final card stack (keep latest version) */
+.cardStack {
+  position: relative;
+
+  width: 450px;
+  max-width: 450px;
+  height: 750px;
+}
+
+@media screen and (min-width: 1024px){
+  .cardStack {
+    height: 500px;
+    width: 100%;
+    /* max-width: 900px; */
+  }
+
+  .deckContainer {
+    position: relative;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1300px){
+  .cardStack {
+    max-width: 1280px;
+  }
+
+  .deckContainer {
+    max-width: 1280px;
+  }
 }
 
 .card {
@@ -28,7 +54,8 @@
   inset: 0;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
 
   overflow: hidden;
   /* padding: 1.5rem; */
@@ -38,6 +65,13 @@
   border-radius: 10px;
 
   transition: all 0.5s ease;
+}
+
+@media screen and (min-width: 1024px){
+  .card {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
 }
 
 .activeCard {
