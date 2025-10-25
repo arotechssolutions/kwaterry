@@ -209,3 +209,32 @@
   background: #f59e0b;
   transform: scale(1.3);
 }
+
+
+.inactiveCard {
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.9); /* slightly more opaque */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* soft shadow for subtle depth */
+  transform: scale(0.97) translateY(10px); /* small offset to create visual layering */
+  filter: blur(0.5px); /* optional: very light blur for realism */
+  transition: all 0.4s ease;
+}
+
+.activeCard {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.98);
+  transform: scale(1) translateY(0);
+  z-index: 99;
+}
+
+.inactiveCard:nth-child(2) {
+  transform: scale(0.97) translateY(10px);
+}
+.inactiveCard:nth-child(3) {
+  transform: scale(0.94) translateY(20px);
+}
+.inactiveCard:nth-child(4) {
+  transform: scale(0.91) translateY(30px);
+}
+
+

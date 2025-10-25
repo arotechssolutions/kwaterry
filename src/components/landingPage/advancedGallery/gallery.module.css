@@ -1,0 +1,74 @@
+.storyBlock {
+  padding: 5rem 1rem;
+  background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "hero hero side1"
+    "hero hero side2"
+    "side3 side3 side2";
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.heroImage {
+  grid-area: hero;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.supportImage {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.supportImage:hover {
+  transform: scale(1.05);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textContent {
+  max-width: 800px;
+  text-align: center;
+}
+
+.textContent h2 {
+  font-family: var(--ff-gst);
+  font-size: 2rem;
+  color: #5c3b23;
+  margin-bottom: 1rem;
+}
+
+.textContent p {
+  font-family: var(--ff-gst);
+  color: #9f7a60;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-areas:
+      "hero"
+      "side1"
+      "side2"
+      "side3";
+  }
+}
