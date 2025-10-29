@@ -49,26 +49,32 @@
 }
 
 .viewFullGallery {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+    color: white;
+    cursor: pointer;
 
-  color: #FFD700; 
-  cursor: pointer;
+    font-size: var(--fs-875);
+    font-family: var(--ff-gst);
 
-  font-size: var(--ff-gst); 
-  font-family: var(--fs-875);
-  font-weight: 600;
+    background: black;
+    border-radius: 8px;
+    
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
 
-  background: rgba(255, 183, 77, .2);
-  border-radius: 5px;
+    width: max-content;
+    height: 45px;
 
-  height: 45px;
-  width: max-content;
+    margin: auto;
 
-  padding: 0.5rem;
+    padding: .5rem .75rem;
+
+    font-weight: 600;
+
+    display: flex;
+    position: relative;
+    top: 31px;
 }
-
 
 .icon {
   width: 1.5rem;
@@ -243,4 +249,58 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+}
+
+/* Enhanced animations and glow effect */
+.guestCard {
+  position: relative;
+  background: rgba(251, 246, 233, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.35s ease;
+  transform-style: preserve-3d;
+}
+
+.guestCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.guestCard:hover::before {
+  opacity: 1;
+}
+
+.guestCard:hover {
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.35);
+  transform: translateY(-8px) rotateY(1deg);
+  border-color: rgba(255, 215, 0, 0.4);
+}
+
+.guestIconWrapper {
+  background: rgba(255, 215, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.guestCard:hover .guestIconWrapper {
+  background: rgba(255, 215, 0, 0.25);
+  transform: scale(1.1);
+}
+
+.guestCount {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #5c3b23;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.guestCard:hover .guestCount {
+  color: #FFD700;
 }
