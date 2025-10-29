@@ -9,6 +9,8 @@ import musiciansVisit from "../../../../public/musicians_visit.jpg"
 import sportsTeamVisit from "../../../../public/sports_team_visit.jpg"
 import studentsVisit from "../../../../public/kidswithterry.jpg"
 
+import MyGallery from "@/components/landingPage/myGallery/myGallery";
+
 // Styles
 import styles from "./socialProof.module.css"
 
@@ -78,7 +80,9 @@ const SocialProof = () => {
             </h3>
           </div>
 
-          <div className={styles.galleryGrid}>
+          <MyGallery />
+
+          {/* <div className={styles.galleryGrid}>
             {
               guestGallery.map((guest, index) => (
                 <div key={index} className={styles.galleryCard} style={{ animationDelay: `${index * 0.2}s` }}>
@@ -94,7 +98,7 @@ const SocialProof = () => {
                 </div>
               ))
             }
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom CTA */}

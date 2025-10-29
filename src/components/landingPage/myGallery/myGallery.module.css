@@ -1,6 +1,6 @@
 .component {
-    height: 100dvh;
-    width: 100vw;
+    height: auto;
+    width: 100%;
 
     display: flex;
     flex-flow: column nowrap;
@@ -9,7 +9,7 @@
 
 .corusel {
     height: 500px;
-    width: 90%;
+    width: 100%;
 
     display: flex;
     flex-flow: row nowrap;
