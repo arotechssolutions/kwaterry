@@ -1,7 +1,7 @@
 "use client"
 
 // Styles
-import styles from "./layoutFour.module.css"
+import styles from "./layoutFourOpp.module.css"
 
 // Assets : Images
 import img1 from "../../../../../../public/hero_kwaterry.jpg"

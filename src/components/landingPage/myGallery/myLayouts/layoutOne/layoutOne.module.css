@@ -1,0 +1,11 @@
+.component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 400px;
+
+  overflow: hidden;
+  border-radius: 2px;
+}

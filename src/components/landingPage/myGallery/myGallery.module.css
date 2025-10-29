@@ -1,0 +1,28 @@
+.component {
+    height: 100dvh;
+    width: 100vw;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.corusel {
+    height: 500px;
+    width: 90%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    margin: auto;
+
+    padding: 0.5rem;
+}

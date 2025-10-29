@@ -1,0 +1,46 @@
+.imageCover {
+  height: 100%;
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  height: 100%;
+  width: 100%;
+}
+
+.image:hover {
+  transform: scale(1.03);
+}
+
+.infoTag {
+  width: max-content;
+
+  padding: 3px 8px 6px !important;
+
+  background-color: var(--black);
+  border: 1px solid var(--white);
+  border-radius: 10px;
+
+  cursor: pointer;
+  color: var(--white);
+
+  font-family: var(--ff-gst);
+  font-size: 0.65rem;
+  font-weight: 450;
+  
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+
+  background-color: rgba(0, 0, 0, .8) !important;
+  box-shadow: 0 0 0 .5px #f6f6f6 !important;
+
+  z-index: 10;
+}

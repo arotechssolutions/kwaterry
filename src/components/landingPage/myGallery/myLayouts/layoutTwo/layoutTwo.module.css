@@ -1,0 +1,15 @@
+.component {
+  display: grid;
+  grid-template-columns: 400px 200px; /* large image takes 2x space */
+  gap: 10px;
+  align-items: stretch;
+
+  height: 100%;
+}
+
+.largeImage,
+.smallImage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}

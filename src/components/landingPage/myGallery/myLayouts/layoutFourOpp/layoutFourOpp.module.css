@@ -1,6 +1,6 @@
 .component {
   display: grid;
-  grid-template-columns: 400px 350px;
+  grid-template-columns: 350px 400px;
   grid-template-rows: 100%;
   gap: 10px;
 
@@ -13,7 +13,7 @@
   flex-direction: column;
   gap: 10px;
 
-  width: 400px;
+  width: 350px;
 }
 
 .topImage {
@@ -53,17 +53,8 @@
   
   overflow: hidden;
 
-  width: 350px;
+  width: 400px;
   height: 100%;
-}
-
-.imageCover {
-  height: 100%;
-  width: 100%;
-
-  aspect-ratio: 16 / 9;
-
-  position: relative;
 }
 
 .image {
@@ -76,30 +67,4 @@
 
 .image:hover {
   transform: scale(1.03);
-}
-
-.infoTag {
-  width: max-content;
-
-  padding: 3px 8px 6px !important;
-
-  background-color: var(--black);
-  border: 1px solid var(--white);
-  border-radius: 10px;
-
-  cursor: pointer;
-  color: var(--white);
-
-  font-family: var(--ff-gst);
-  font-size: 0.65rem;
-  font-weight: 450;
-  
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-
-  background-color: rgba(0, 0, 0, .8) !important;
-  box-shadow: 0 0 0 .5px #f6f6f6 !important;
-
-  z-index: 10;
 }
