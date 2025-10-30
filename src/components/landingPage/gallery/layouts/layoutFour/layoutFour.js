@@ -4,10 +4,10 @@
 import styles from "./layoutFour.module.css"
 
 // Assets : Images
-import img1 from "../../../../../../public/hero_kwaterry.jpg"
-import img2 from "../../../../../../public/traditional_food.jpg"
-import img3 from "../../../../../../public/drumming_night.jpg"
-import img4 from "../../../../../../public/terry_portrait.jpg"
+import img1 from "../../../../../../public/lordbrightoncollege/atbanner.jpg"
+import img2 from "../../../../../../public/lordbrightoncollege/bus.jpg"
+import img3 from "../../../../../../public/lordbrightoncollege/catchinghuku.jpg"
+import img4 from "../../../../../../public/lordbrightoncollege/yazobatwa.jpg"
 
 // Components
 import Img from "../image/image"
