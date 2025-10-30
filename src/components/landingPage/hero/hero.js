@@ -7,36 +7,38 @@ import { motion, AnimatePresence } from "framer-motion"
 // Styles
 import styles from "./hero.module.css"
 
-const imagesDb = [
-  "/newphotos/buffet.webp",
-  "/newphotos/carpark.webp",
-  "/newphotos/crowdatentrance.webp",
-  "/newphotos/firstgazebo.webp",
-  "/newphotos/firstgazebosummer.webp",
-  "/newphotos/greenlawn.jpg",
-  "/newphotos/motorbikes.jpg",
-  "/newphotos/servedfood.jpg",
-  "/newphotos/treehouse.webp",
-  "/newphotos/vintageterry.webp",
-  "/newphotos/visitoratentrance.webp",
-  "/newphotos/vwgtcars.webp",
-  "/newphotos/whitescooking.webp",
+// Unified Media Database (images + optional videos)
+const mediaDb = [
+  { type: "image", src: "/newphotos/buffet.webp" },
+  { type: "image", src: "/newphotos/carpark.webp" },
+  { type: "image", src: "/newphotos/crowdatentrance.webp" },
+  { type: "video", src: "/trimmedvid.mp4" },
+  { type: "image", src: "/newphotos/firstgazebo.webp" },
+  { type: "image", src: "/newphotos/firstgazebosummer.webp" },
+  { type: "image", src: "/newphotos/greenlawn.jpg" },
+  { type: "image", src: "/newphotos/treehouse.webp" },
+  { type: "image", src: "/newphotos/vintageterry.webp" },
+  { type: "image", src: "/newphotos/visitoratentrance.webp" },
+  { type: "image", src: "/newphotos/vwgtcars.webp" },
+  { type: "image", src: "/newphotos/whitescooking.webp" },
 ]
 
 const Hero = () => {
   const [current, setCurrent] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
 
-  // Auto-rotate every 6 seconds, but pause on hover
+  // Auto-rotate every 6 seconds (pauses when hovered)
   useEffect(() => {
     if (isPaused) return
 
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % imagesDb.length)
+      setCurrent((prev) => (prev + 1) % mediaDb.length)
     }, 6000)
 
     return () => clearInterval(timer)
   }, [isPaused])
+
+  const currentMedia = mediaDb[current]
 
   return (
     <section
@@ -45,29 +47,42 @@ const Hero = () => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Animated background image */}
+      {/* Animated Background */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={imagesDb[current]}
+          key={currentMedia.src}
           className={styles.parallax}
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 1 }}
         >
-          <Image
-            src={imagesDb[current]}
-            alt="KwaTerry Background"
-            fill
-            className={styles.parallax}
-            unoptimized
-            priority
-            quality={100}
-          />
+          {currentMedia.type === "image" ? (
+            <Image
+              src={currentMedia.src}
+              alt="KwaTerry Media"
+              fill
+              className={styles.parallax}
+              unoptimized
+              priority
+              quality={100}
+            />
+          ) : (
+            <video
+              key={currentMedia.src}
+              className={styles.parallax}
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src={currentMedia.src} type="video/mp4" />
+            </video>
+          )}
         </motion.div>
       </AnimatePresence>
 
-      {/* Overlay and pattern */}
+      {/* Overlay and Pattern */}
       <div className={styles.overlay}></div>
       <div className={styles.heroPattern}></div>
 
