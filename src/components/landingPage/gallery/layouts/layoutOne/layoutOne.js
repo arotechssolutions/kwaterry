@@ -7,10 +7,10 @@ import img1 from "../../../../../../public/hero_kwaterry.jpg"
 // Components
 import Img from "../image/image"
 
-const LayoutOne = () => {
+const LayoutOne = ({ images }) => {
   return (
     <div className={styles.component}>
-        <Img src={img1} />
+        <Img src={images[0]} />
     </div>
   )
 }

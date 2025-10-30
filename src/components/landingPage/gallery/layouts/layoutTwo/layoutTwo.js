@@ -8,14 +8,18 @@ import img2 from "../../../../../../public/traditional_food.jpg"
 // Components
 import Img from "../image/image"
 
-const LayoutTwo = () => {
+// Sizes
+import { layoutImageSizes } from "@/components/landingPage/gallery/gallery"
+
+const LayoutTwo = ({ images }) => {
+  const sizes = layoutImageSizes.LayoutTwo
   return (
     <div className={styles.component}>
       <div className={styles.largeImage}>
-        <Img src={img1} />
+        <Img src={images[0]} {...sizes[0]} />
       </div>
       <div className={styles.smallImage}>
-        <Img src={img2} />
+        <Img src={images[1]} {...sizes[1]}/>
       </div>
     </div>
   )

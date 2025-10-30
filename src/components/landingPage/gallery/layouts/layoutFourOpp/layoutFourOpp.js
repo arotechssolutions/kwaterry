@@ -12,29 +12,34 @@ import img4 from "../../../../../../public/terry_portrait.jpg"
 // Components
 import Img from "../image/image"
 
-const layoutFour = () => {
+// Sizes
+import { layoutImageSizes } from "@/components/landingPage/gallery/gallery"
+
+const layoutFourOpp = ({ images }) => {
+  const sizes = layoutImageSizes.LayoutFourOpp
+
   return (
     <section className={styles.component}>
       <div className={styles.leftColumn}>
         <div className={styles.topImage}>
-          <Img src={img1} />
+          <Img src={images[0]} {...sizes[0]} />
         </div>
 
         <div className={styles.bottomImages}>
           <div className={styles.smallImage}>
-            <Img src={img2} />
+            <Img src={images[1]} {...sizes[0]} />
           </div>
           <div className={styles.smallImage}>
-            <Img src={img3} />
+            <Img src={images[2]} {...sizes[0]} />
           </div>
         </div>
       </div>
 
       <div className={styles.rightColumn}>
-        <Img src={img4} />
+        <Img src={images[3]} {...sizes[0]} />
       </div>
     </section>
   )
 }
 
-export default layoutFour
+export default layoutFourOpp
