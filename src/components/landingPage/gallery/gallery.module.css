@@ -47,3 +47,40 @@
 .corusel > * {
   flex: 0 0 auto;
 }
+
+.fadeLeft, .fadeRight {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+  height: 100%;
+  z-index: 5;
+
+  /* Default fade width for desktop */
+  width: min(12vw, 160px);
+}
+
+/* Left fade */
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+/* Right fade */
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .fadeLeft, .fadeRight {
+    width: min(20vw, 90px);
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .fadeLeft, .fadeRight {
+    width: min(15vw, 120px);
+  }
+}

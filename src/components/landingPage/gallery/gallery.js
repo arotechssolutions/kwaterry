@@ -160,21 +160,23 @@ const Gallery = () => {
 
   return (
     <section className={styles.component}>
+      
+      {/* Fade overlays */}
+      <div className={styles.fadeLeft}></div>
+      <div className={styles.fadeRight}></div>
+
       <section
         className={styles.corusel}
         ref={scrollerRef}
         onMouseEnter={stopScroll}
         onMouseLeave={startScroll}
       >
-        {/* ✅ duplicate the gallery for infinite scroll */}
-        {
-          [...Array(2)].map((_, dupIndex) =>
-            sections.map((section, i) => {
-              const { Layout, images } = section
-              return <Layout key={`${dupIndex}-${i}`} images={images} />
-            })
-          )
-        }
+        {[...Array(2)].map((_, dupIndex) =>
+          sections.map((section, i) => {
+            const { Layout, images } = section
+            return <Layout key={`${dupIndex}-${i}`} images={images} />
+          })
+        )}
       </section>
     </section>
   )
