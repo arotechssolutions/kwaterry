@@ -47,6 +47,24 @@ export const layoutImageSizes = {
 }
 
 const imagesDb = [
+  "/newphotos/buffet.webp", //good
+  "/newphotos/carpark.webp",
+  "/newphotos/crowdatentrance.webp",
+  "/newphotos/firstgazebo.webp",
+  "/newphotos/firstgazebosummer.webp",
+  "/newphotos/greenlawn.jpg",
+  "/newphotos/motorbikes.jpg",
+  "/newphotos/servedfood.jpg",
+  "/newphotos/servedfood.webp",
+  "/newphotos/treehouse.webp",
+  "/newphotos/vintageterry.webp",
+  "/newphotos/visitoratentrance.webp",
+  "/newphotos/treehouse.webp",
+  "/newphotos/vintageterry.webp",
+  "/newphotos/visitoratentrance.webp",
+  "/newphotos/vwgtcars.webp",
+  "/newphotos/whitescooking.webp",
+
   "/lordbrightoncollege/atbanner.jpg",
   "/lordbrightoncollege/bus.jpg",
   "/lordbrightoncollege/catchinghuku.jpg",
