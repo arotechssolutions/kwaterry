@@ -1,5 +1,8 @@
 "use client"
 
+// React
+import { useRef, useEffect } from "react"
+
 // Styles
 import styles from "./gallery.module.css"
 
@@ -87,10 +90,10 @@ const layoutSequence = [
   { component: LayoutOne, count: 1 },
 ]
 
-// shuffle helper
+// Shuffle helper
 const shuffleArray = (arr) => [...arr].sort(() => Math.random() - 0.5)
 
-// ✅ shuffle only layout order — keep image order
+// Shuffle only layout order — keep image order
 function clusterImagesPreserveOrder(imagesDb, layoutSequence) {
   const sections = []
   let index = 0
@@ -115,20 +118,68 @@ function clusterImagesPreserveOrder(imagesDb, layoutSequence) {
   return sections
 }
 
-// ✅ use new logic
+// use new logic
 const sections = clusterImagesPreserveOrder(imagesDb, layoutSequence)
 
 const Gallery = () => {
+  const scrollerRef = useRef(null)
+  const scrollInterval = useRef(null)
+
+  const AUTO_SCROLL_SPEED = 0.6 // adjust speed
+
+  // ✅ Start auto scroll
+  const startScroll = () => {
+    if (!scrollerRef.current) return
+    if (scrollInterval.current) return // prevent duplicates
+
+    scrollInterval.current = setInterval(() => {
+      const el = scrollerRef.current
+      if (!el) return
+
+      el.scrollLeft += AUTO_SCROLL_SPEED
+
+      // ✅ Loop continuously
+      if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+        el.scrollLeft = 0
+      }
+    }, 16) // ~60FPS feel
+  }
+
+  // ✅ Stop scrolling
+  const stopScroll = () => {
+    if (scrollInterval.current) {
+      clearInterval(scrollInterval.current)
+      scrollInterval.current = null
+    }
+  }
+
+  useEffect(() => {
+    startScroll()
+    return stopScroll
+  }, [])
+
   return (
     <section className={styles.component}>
-      <section className={styles.corusel}>
-        {sections.map((section, i) => {
-          const { Layout, images } = section
-          return <Layout key={i} images={images} />
-        })}
+      <section
+        className={styles.corusel}
+        ref={scrollerRef}
+        onMouseEnter={stopScroll}
+        onMouseLeave={startScroll}
+      >
+        {/* ✅ duplicate the gallery for infinite scroll */}
+        {
+          [...Array(2)].map((_, dupIndex) =>
+            sections.map((section, i) => {
+              const { Layout, images } = section
+              return <Layout key={`${dupIndex}-${i}`} images={images} />
+            })
+          )
+        }
       </section>
     </section>
   )
 }
+
+
 
 export default Gallery

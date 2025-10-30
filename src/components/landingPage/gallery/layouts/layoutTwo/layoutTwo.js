@@ -1,10 +1,6 @@
 // Styles
 import styles from './layoutTwo.module.css'
 
-// Assets : Images
-import img1 from "../../../../../../public/hero_kwaterry.jpg"
-import img2 from "../../../../../../public/traditional_food.jpg"
-
 // Components
 import Img from "../image/image"
 

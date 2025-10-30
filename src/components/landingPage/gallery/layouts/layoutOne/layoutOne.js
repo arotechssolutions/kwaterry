@@ -1,9 +1,6 @@
 // Styles
 import styles from './layoutOne.module.css'
 
-// Assets : Images
-import img1 from "../../../../../../public/hero_kwaterry.jpg"
-
 // Components
 import Img from "../image/image"
 

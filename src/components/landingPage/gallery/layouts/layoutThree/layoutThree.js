@@ -4,11 +4,6 @@ import styles from './layoutThree.module.css'
 // Components
 import Img from "../image/image"
 
-// Assets : Images
-import img1 from "../../../../../../public/hero_kwaterry.jpg"
-import img2 from "../../../../../../public/traditional_food.jpg"
-import img3 from "../../../../../../public/drumming_night.jpg"
-
 // Sizes
 import { layoutImageSizes } from "@/components/landingPage/gallery/gallery"
 

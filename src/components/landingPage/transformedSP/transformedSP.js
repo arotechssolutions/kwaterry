@@ -1,7 +1,7 @@
 "use client"
 
 // Assets : Icons
-import { Star } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 
 // Components
 import MyGallery from "@/components/landingPage/gallery/gallery"
@@ -31,7 +31,7 @@ const SocialProof = () => {
 
         <MyGallery />
 
-        <section className={styles.viewFullGallery}>See Full Gallery</section>
+        <section className={styles.viewFullGallery}>See Full Gallery <ChevronRight size={15} className={styles.arrowRight} /> </section>
 
         {/* Bottom CTA */}
         {/* <div className={styles.bottomCTA}>

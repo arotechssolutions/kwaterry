@@ -5,6 +5,7 @@
   overflow: hidden;
 
   background: linear-gradient(90deg, #bf6840, #e9c763);
+  background: var(--white);
 }
 
 .bgPattern {
@@ -12,6 +13,7 @@
   inset: 0;
   opacity: 0.05;
   background-image: linear-gradient(90deg, #bf6840, #e9c763);
+  background-image: unset;
 }
 
 .container {
@@ -49,31 +51,38 @@
 }
 
 .viewFullGallery {
-    color: white;
-    cursor: pointer;
+  color: white;
+  cursor: pointer;
 
-    font-size: var(--fs-875);
-    font-family: var(--ff-gst);
+  font-size: var(--fs-875);
+  font-family: var(--ff-gst);
 
-    background: black;
-    border-radius: 8px;
-    
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
+  background: black;
+  border-radius: 8px;
+  
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 
-    width: max-content;
-    height: 45px;
+  width: max-content;
+  height: 45px;
 
-    margin: auto;
+  margin: auto;
 
-    padding: .5rem .75rem;
+  padding: .5rem .8rem;
 
-    font-weight: 600;
+  font-weight: 600;
 
-    display: flex;
-    position: relative;
-    top: 31px;
+  display: flex;
+  position: relative;
+  top: 31px;
+}
+
+.arrowRight {
+  color: var(--white);
+
+  position: relative;
+  top: 0.7px;
 }
 
 .icon {
@@ -241,6 +250,8 @@
   font-family: var(--ff-gst);
   font-size: var(--fs-hd);
   font-weight: 500;
+
+  color: var(--black);
 }
 
 
