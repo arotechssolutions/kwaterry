@@ -47,6 +47,22 @@ export const layoutImageSizes = {
 }
 
 const imagesDb = [
+  '/morenew/roadrunnerrimwe.jpg',
+  '/morenew/roadrunner.jpg',
+  '/morenew/outsidecarpark.webp',
+  '/morenew/treehouse.webp',
+  '/morenew/shitboys.webp',
+  '/morenew/gango.webp',
+  '/morenew/quadbikes.webp',
+  '/morenew/kamuchina.webp',
+  '/morenew/proposal.webp',
+  '/morenew/servedfoodmix.webp',
+  '/morenew/servedfish.webp',
+  '/morenew/sunsettreehouse.webp',
+  '/morenew/mukombe.webp',
+  '/morenew/bakyard.webp',
+  '/morenew/whitewithhen.webp',
+
   "/newphotos/buffet.webp", //good
   "/newphotos/carpark.webp",
   "/newphotos/crowdatentrance.webp",
