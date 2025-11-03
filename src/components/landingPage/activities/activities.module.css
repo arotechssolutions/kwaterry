@@ -13,7 +13,7 @@
 /* Header */
 .header {
   text-align: center;
-  margin-bottom: 4rem; /* mb-16 */
+  /* margin-bottom: 4rem;  */
   animation: fade-in 1s ease forwards;
 }
 

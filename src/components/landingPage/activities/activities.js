@@ -12,6 +12,8 @@ import drummingNight from "../../../../public/drumming_night.jpg"
 // Assets : Icons
 import { Music, Lightbulb, Mountain, Flame, MapPin } from "lucide-react"
 
+import Corousel from "@/components/landingPage/corousel/corousel"
+
 const Activities = () => {
   const activities = [
     {
@@ -53,12 +55,11 @@ const Activities = () => {
           </p>
         </div>
 
-        {/* Activities Grid */}
-        <div className={styles.activitiesGrid}>
+        {/* <div className={styles.activitiesGrid}>
           {
             activities.map((activity, index) => (
               <div key={index} className={styles.activityCard} style={{ animationDelay: `${index * 0.2}s` }}>
-                {/* Image/Icon Header */}
+            
                 <div className={styles.activityImageWrapper}>
                   {
                     activity.image ? (
@@ -71,11 +72,9 @@ const Activities = () => {
                   }
                   <div className={styles.imageOverlay}></div>
 
-                  {/* Duration Badge */}
                   <div className={styles.durationBadge}>{activity.duration}</div>
                 </div>
 
-                {/* Content */}
                 <div className={styles.activityContent}>
                   <div className={styles.activityTitleWrapper}>
                     <activity.icon size={24} className={styles.activityIconSmall} />
@@ -94,9 +93,19 @@ const Activities = () => {
               </div>
             ))
           }
-        </div>
+        </div> */}
 
-        {/* Location & Contact */}
+        <Corousel />
+      </div>
+    </section>
+  )
+}
+
+export default Activities
+
+
+
+{/* Location & Contact */}
         {/* <div className={styles.locationSection}>
           <div className={styles.locationGrid}>
             <div className={styles.locationInfo}>
@@ -131,9 +140,3 @@ const Activities = () => {
             </div>
           </div>
         </div> */}
-      </div>
-    </section>
-  )
-}
-
-export default Activities
