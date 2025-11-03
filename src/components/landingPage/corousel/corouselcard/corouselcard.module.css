@@ -1,0 +1,35 @@
+.card {
+  flex: 0 0 100%;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.imageWrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+.text {
+  margin-top: 1rem;
+}
+
+.text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.text p {
+  font-size: 1rem;
+  color: #aaa;
+}

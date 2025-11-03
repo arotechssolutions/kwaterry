@@ -23,18 +23,17 @@ const mediaDb = [
   { type: "image", src: "/newphotos/whitescooking.webp" },
 ]
 
+
 const Hero = () => {
   const [current, setCurrent] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
 
-  // Auto-rotate every 6 seconds (pauses when hovered)
+  // Automatic slide every 6s (pauses on hover)
   useEffect(() => {
     if (isPaused) return
-
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % mediaDb.length)
     }, 6000)
-
     return () => clearInterval(timer)
   }, [isPaused])
 
@@ -47,15 +46,14 @@ const Hero = () => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Animated Background */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentMedia.src}
-          className={styles.parallax}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 1 }}
+          className={styles.mediaWrapper}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.8, ease: "easeInOut" }}
         >
           {currentMedia.type === "image" ? (
             <Image
@@ -113,6 +111,7 @@ const Hero = () => {
 }
 
 export default Hero
+
 
 
 

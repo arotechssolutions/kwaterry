@@ -1,0 +1,49 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+  background: #0a0a0a;
+  border-radius: 20px;
+  padding: 2rem;
+  color: white;
+}
+
+.cards {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gray;
+  cursor: pointer;
+}
+
+.activeDot {
+  background: white;
+}

@@ -7,6 +7,7 @@ import Activities from "@/components/landingPage/activities/activities"
 import Footer from "@/components/landingPage/footer/footer"
 import About from "@/components/landingPage/about/about"
 import SP from "@/components/landingPage/transformedSP/transformedSP"
+import Corousel from "@/components/landingPage/corousel/corousel"
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <Navigation />
       <Hero />
       <About />
+      <Corousel />
       {/* <SocialProof /> */}
       <SP />
       <Menu />
