@@ -135,7 +135,7 @@
   width: 100%;
   height: 45px;
 
-  background: rgba(255, 183, 77, .8);
+  background: rgba(255, 183, 77, .9);
   border-radius: 5px;
 
   animation: shake 2.5s infinite ease-in-out;
@@ -144,6 +144,19 @@
   cursor: pointer;
 
   margin: auto auto;
+}
+
+/* Shake keyframes */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-4px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(4px);
+  }
 }
 
 @media screen and (min-width: 531px) {
