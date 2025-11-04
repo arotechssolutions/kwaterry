@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { CalendarRange, Pause, Play, ChevronUp, ChevronRight } from "lucide-react"
+import { CalendarRange, Pause, Play, ChevronLeft, ChevronRight } from "lucide-react"
 import styles from "./hero.module.css"
+import Navigation from "@/components/landingPage/navigation/navigation"
 
 const mediaDb = [
   { type: "image", src: "/arealphoto.jpg" },
@@ -54,27 +55,37 @@ const Hero = () => {
         </motion.div>
       </AnimatePresence>
 
+      <Navigation />
+
       {/* Overlay */}
       <div className={styles.overlay}></div>
 
       {/* Content */}
-      <div className={styles.heroContent}>
-        <h1 className={styles.heroTitle}>
-          Kwa<span className={styles.highlight}>Terry</span>
-        </h1>
-        <p className={styles.heroSubtitle}>
-          Discover an authentic rural zimbabwean experience through traditional food, cultural immersion,
-          and unforgettable rural experiences at KwaTerry.
-        </p>
+      <div className={styles.heroCover}>
+        <button className={styles.navBtns} onClick={prevSlide}>
+          <ChevronLeft size={12} />
+        </button>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>
+            Kwa<span className={styles.highlight}>Terry</span>
+          </h1>
+          <p className={styles.heroSubtitle}>
+            Discover an authentic rural zimbabwean experience through traditional food, cultural immersion,
+            and unforgettable rural experiences at KwaTerry.
+          </p>
 
-        <p className={styles.bookingNotice}>
-          Booking Notice: Walk-ins are welcome! For groups, please book in advance.
-        </p>
+          <p className={styles.bookingNotice}>
+            Booking Notice: Walk-ins are welcome! For groups, please book in advance.
+          </p>
 
-        <div className={styles.floatingBadge}>
-          <CalendarRange size={22} color="#5c3b23" />
-          <h1 className={styles.badgeText}>Book An Experience</h1>
+          <div className={styles.floatingBadge}>
+            <CalendarRange size={22} color="#5c3b23" />
+            <h1 className={styles.badgeText}>Book An Experience</h1>
+          </div>
         </div>
+        <button className={styles.navBtns} onClick={nextSlide}>
+          <ChevronRight size={12} />
+        </button>
       </div>
 
       {/* Progress Bars */}
@@ -91,16 +102,8 @@ const Hero = () => {
 
       {/* Controls */}
       <div className={styles.controlPanel}>
-        <button onClick={prevSlide}>
-          <ChevronUp size={12} />
-        </button>
-
-        <button onClick={() => setIsPaused((p) => !p)}>
+        <button className={styles.pauseBtn} onClick={() => setIsPaused((p) => !p)}>
           { isPaused ? <Play size={12} /> : <Pause size={12} /> }
-        </button>
-
-        <button onClick={nextSlide}>
-          <ChevronRight size={12} />
         </button>
       </div>
     </section>

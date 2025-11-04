@@ -24,6 +24,15 @@
   background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7), rgba(0, 0, 0, .5));
 }
 
+.heroCover {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  width: 100%;
+  padding: 0 20px;
+}
+
 .heroContent {
   position: relative;
   z-index: 10;
@@ -46,7 +55,7 @@
 }
 
 .highlight {
-  color: #5c3b23;
+  color: rgba(255, 183, 77, 1);
 }
 
 @media (min-width: 768px) {
@@ -305,14 +314,15 @@
 .controlPanel {
   position: absolute;
   left: 20px;
-  bottom: 60px;
+  bottom: 15px;
   display: flex;
   flex-direction: row;
   gap: 8px;
   z-index: 25;
 }
 
-.controlPanel button {
+.controlPanel button,
+.navBtns {
   width: 30;
   height: 30;
   border-radius: 50%;
@@ -325,6 +335,37 @@
   justify-content: center;
   cursor: pointer;
   transition: .2s;
+}
+
+.pauseBtn {
+  pointer-events: auto;
+
+  border-radius: 20px !important;
+  border: 1px solid var(--white) !important;
+  background-color: white !important;
+
+  color: var(--black) !important;
+
+  height: 24px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBtns {
+  height: 50px;
+  width: 50px;
+}
+
+.navBtns {
+  display: none;
+}
+
+@media screen and (min-width:1024px) {
+  .navBtns {
+    display: flex !important;
+  }
 }
 
 .controlPanel button:hover {
