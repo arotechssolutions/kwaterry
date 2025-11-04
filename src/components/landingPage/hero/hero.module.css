@@ -130,12 +130,11 @@
   justify-content: center;
   gap: 0.5rem;
 
-  /* animation: float 2s infinite ease-in-out; */
-
   width: 100%;
   height: 45px;
 
   background: rgba(255, 183, 77, .9);
+  box-shadow: 0 0px 10px rgba(255, 183, 77, 0.35), 0 0px 6px rgba(0, 0, 0, 0.18);
   border-radius: 5px;
 
   animation: shake 2.5s infinite ease-in-out;
@@ -144,6 +143,12 @@
   cursor: pointer;
 
   margin: auto auto;
+}
+
+.floatingBadge:hover {
+  box-shadow: 0 0 22px rgba(255, 183, 77, 0.45), 0 0 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  transition: .25s ease;
 }
 
 /* Shake keyframes */
@@ -194,102 +199,6 @@
 }
 
 /* to here */
-
-/* new ones */
-.heroCTAContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-
-/* Tagline badge */
-.heroTagline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.25);
-  backdrop-filter: blur(8px);
-  padding: 0.75rem 1.4rem;
-  border-radius: 12px;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #fff;
-  animation: float 2s infinite ease-in-out;
-}
-
-/* Dot already exists but make it slightly nicer */
-.badgeDot {
-  width: 0.55rem;
-  height: 0.55rem;
-  background-color: #22c55e;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-/* Buttons */
-.buttonGroup {
-  display: flex;
-  gap: 1rem;
-}
-
-/* Primary Action Button */
-.primaryBtn {
-  border: none;
-  color: white;
-  font-size: var(--fs-875);
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform .2s ease, background .2s ease;
-
-  height: 40px;
-  width: max-content;
-
-  border-radius: 5px;
-  background: rgba(251, 246, 233, .9);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  cursor: pointer;
-    font-size: var(--fs-875);
-    font-family: var(--ff-gst);
-}
-.primaryBtn:hover {
-  /* background: #1faa56; */
-  transform: translateY(-3px);
-}
-
-/* Secondary Ghost Button */
-.secondaryBtn {
-  background: rgba(255,255,255,0.18);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255,255,255,0.25);
-  padding: 0.9rem 1.8rem;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform .2s ease, background .2s ease;
-
-  cursor: pointer;
-    font-size: var(--fs-875);
-    font-family: var(--ff-gst);
-
-  height: 40px;
-  width: max-content;
-
-  border-radius: 5px;
-}
-.secondaryBtn:hover {
-  background: rgba(255,255,255,0.3);
-  transform: translateY(-3px);
-}
-
-/* new ones */
 
 .scrollIndicator {
   position: absolute;

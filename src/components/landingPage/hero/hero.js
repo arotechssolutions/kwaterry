@@ -84,11 +84,11 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className={styles.scrollIndicator}>
+      {/* <div className={styles.scrollIndicator}>
         <div className={styles.scrollOuter}>
           <div className={styles.scrollInner}></div>
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }
