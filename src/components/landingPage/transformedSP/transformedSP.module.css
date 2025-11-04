@@ -51,15 +51,16 @@
 }
 
 .viewFullGallery {
-  color: white;
   cursor: pointer;
+  color: #5c3b23;
 
-  font-size: var(--fs-875);
   font-family: var(--ff-gst);
+  font-size: var(--fs-875);
 
-  background: black;
   border-radius: 8px;
-  
+  background: rgba(255, 183, 77, .9);
+  box-shadow: 0 0 10px rgba(255, 183, 77, .35), 0 0 6px rgba(0, 0, 0, .18);
+
   justify-content: center;
   align-items: center;
   gap: 5px;
@@ -68,10 +69,7 @@
   height: 45px;
 
   margin: auto;
-
   padding: .5rem .8rem;
-
-  font-weight: 600;
 
   display: flex;
   position: relative;
@@ -85,8 +83,7 @@
 }
 
 .arrowRight {
-  color: var(--white);
-
+  color: #5c3b23;
   position: relative;
   top: 0.7px;
 }

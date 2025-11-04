@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Pause, ChevronUp, ChevronDown } from "lucide-react";
+import { Pause, Play, ChevronUp, ChevronDown } from "lucide-react";
 import styles from "./corousel.module.css";
 
 const cards = [
@@ -73,13 +73,25 @@ export default function StackedCarousel() {
       </div>
 
       <div className={styles.controls}>
-        <button onClick={prevCard} className={styles.iconButton}>
+        <button onClick={prevCard} className={styles.upIconButton}>
           <ChevronUp color="#808080" size={12} />
         </button>
-        <button onClick={() => setIsPaused(!isPaused)} className={styles.iconButton}>
-          <Pause color="#808080" size={12} />
-        </button>
-        <button onClick={nextCard} className={styles.iconButton}>
+
+
+        {
+          !isPaused && <button onClick={() => setIsPaused(!isPaused)} className={styles.iconButton}>
+            <Pause color="#808080" size={12} />
+          </button>
+        }
+
+        { 
+          isPaused && <button onClick={() => setIsPaused(!isPaused)} className={styles.iconButton}>
+            <Play color="#808080" size={12} />
+          </button>
+        }
+
+
+        <button onClick={nextCard} className={styles.downIconButton}>
           <ChevronDown color="#808080" size={12} />
         </button>
       </div>
