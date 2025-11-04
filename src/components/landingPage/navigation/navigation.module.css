@@ -6,7 +6,6 @@
   z-index: 50;
   background-color: rgba(251, 246, 233, 1); 
   backdrop-filter: blur(8px);
-  /* border-bottom: 1px solid var(--border-color); */
 }
 
 .container {

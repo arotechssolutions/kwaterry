@@ -39,14 +39,15 @@
   font-size: 3rem; /* text-5xl */
   font-size: 2.25rem;
   font-weight: 700;
-  font-weight: 450;
   color: #fff;
   margin-bottom: 1.5rem;
   text-wrap: balance;
   animation: fade-in-left 1s ease forwards;
 }
 
-
+.highlight {
+  color: #5c3b23;
+}
 
 @media (min-width: 768px) {
   .heroTitle {
@@ -261,12 +262,12 @@
 /* Progress Bars */
 .progressWrapper {
   position: absolute;
-  bottom: 12px;
+  bottom: 0px;
   left: 0;
   width: 100%;
   display: flex;
-  gap: 6px;
-  padding: 0 20px;
+  gap: 4px;
+  padding: 0;
   z-index: 20;
 }
 
@@ -274,7 +275,7 @@
   flex: 1;
   height: 7px;
   background: rgba(255,255,255,0.3);
-  border-radius: 4px;
+  border-radius: 0;
   overflow: hidden;
   cursor: pointer;
 }
@@ -287,7 +288,7 @@
   width: 0%;
   height: 100%;
   background: rgba(255,183,77,1);
-  border-radius: 4px;
+  border-radius: 0;
   transform-origin: left;
 }
 
@@ -303,10 +304,10 @@
 /* Controls */
 .controlPanel {
   position: absolute;
-  right: 20px;
+  left: 20px;
   bottom: 60px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 8px;
   z-index: 25;
 }

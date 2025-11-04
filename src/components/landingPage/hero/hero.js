@@ -3,21 +3,14 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { CalendarRange, Pause, Play, ChevronUp, ChevronDown } from "lucide-react"
+import { CalendarRange, Pause, Play, ChevronUp, ChevronRight } from "lucide-react"
 import styles from "./hero.module.css"
 
 const mediaDb = [
-  { type: "image", src: "/newphotos/buffet.webp" },
-  { type: "image", src: "/newphotos/carpark.webp" },
-  { type: "image", src: "/newphotos/crowdatentrance.webp" },
-  { type: "video", src: "/trimmedvid.mp4" },
-  { type: "image", src: "/newphotos/firstgazebo.webp" },
-  { type: "image", src: "/newphotos/firstgazebosummer.webp" },
-  { type: "image", src: "/newphotos/greenlawn.jpg" },
-  { type: "image", src: "/newphotos/treehouse.webp" },
-  { type: "image", src: "/newphotos/vintageterry.webp" },
-  { type: "image", src: "/newphotos/visitoratentrance.webp" },
+  { type: "image", src: "/arealphoto.jpg" },
   { type: "image", src: "/newphotos/vwgtcars.webp" },
+  { type: "image", src: "/newphotos/buffet.webp" },
+  { type: "video", src: "/trimmedvid.mp4" },
   { type: "image", src: "/newphotos/whitescooking.webp" },
 ]
 
@@ -66,7 +59,9 @@ const Hero = () => {
 
       {/* Content */}
       <div className={styles.heroContent}>
-        <h1 className={styles.heroTitle}>KwaTerry</h1>
+        <h1 className={styles.heroTitle}>
+          Kwa<span className={styles.highlight}>Terry</span>
+        </h1>
         <p className={styles.heroSubtitle}>
           Discover an authentic rural zimbabwean experience through traditional food, cultural immersion,
           and unforgettable rural experiences at KwaTerry.
@@ -97,15 +92,15 @@ const Hero = () => {
       {/* Controls */}
       <div className={styles.controlPanel}>
         <button onClick={prevSlide}>
-          <ChevronUp size={18} />
+          <ChevronUp size={12} />
         </button>
 
         <button onClick={() => setIsPaused((p) => !p)}>
-          { isPaused ? <Play size={18} /> : <Pause size={18} /> }
+          { isPaused ? <Play size={12} /> : <Pause size={12} /> }
         </button>
 
         <button onClick={nextSlide}>
-          <ChevronDown size={18} />
+          <ChevronRight size={12} />
         </button>
       </div>
     </section>
