@@ -3,12 +3,9 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { CalendarRange, Component } from "lucide-react"
-
-// Styles
+import { CalendarRange, Pause, Play, ChevronUp, ChevronDown } from "lucide-react"
 import styles from "./hero.module.css"
 
-// Unified Media Database (images + optional videos)
 const mediaDb = [
   { type: "image", src: "/newphotos/buffet.webp" },
   { type: "image", src: "/newphotos/carpark.webp" },
@@ -27,335 +24,92 @@ const mediaDb = [
 const Hero = () => {
   const [current, setCurrent] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
+  const duration = 6000
 
-  // Automatic slide every 6s (pauses on hover)
+  // Auto-slide
   useEffect(() => {
     if (isPaused) return
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % mediaDb.length)
-    }, 6000)
+    }, duration)
     return () => clearInterval(timer)
   }, [isPaused])
 
   const currentMedia = mediaDb[current]
+
+  const nextSlide = () => setCurrent((prev) => (prev + 1) % mediaDb.length)
+  const prevSlide = () => setCurrent((prev) => (prev - 1 + mediaDb.length) % mediaDb.length)
+  const jumpToSlide = (idx) => setCurrent(idx)
 
   return (
     <section id="home" className={styles.heroSection} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
       <AnimatePresence mode="wait">
         <motion.div key={currentMedia.src} className={styles.mediaWrapper} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1.8, ease: "easeInOut" }}>
           {
-            currentMedia.type === "image" && <Image src={currentMedia.src} alt="KwaTerry Media" fill className={styles.parallax} unoptimized priority quality={100}/>
+            currentMedia.type === "image" && (
+              <Image src={currentMedia.src} alt="KwaTerry Media" fill className={styles.parallax} unoptimized priority quality={100} />
+            )
           }
+
           {
-            currentMedia.type === "video" && <video key={currentMedia.src} className={styles.parallax} autoPlay loop muted playsInline>
-              <source src={currentMedia.src} type="video/mp4" />
-            </video>
-          
+            currentMedia.type === "video" && (
+              <video className={styles.parallax} autoPlay loop muted playsInline>
+                <source src={currentMedia.src} type="video/mp4" />
+              </video>
+            )
           }
         </motion.div>
       </AnimatePresence>
 
-      {/* Overlay and Pattern */}
+      {/* Overlay */}
       <div className={styles.overlay}></div>
-      <div className={styles.heroPattern}></div>
 
       {/* Content */}
       <div className={styles.heroContent}>
-        <h1 className={styles.heroTitle}>Authentic Rural Zimbabwean Experience</h1>
+        <h1 className={styles.heroTitle}>KwaTerry</h1>
         <p className={styles.heroSubtitle}>
-          Discover the heart of Zimbabwe through traditional food, cultural immersion,
+          Discover an authentic rural zimbabwean experience through traditional food, cultural immersion,
           and unforgettable rural experiences at KwaTerry.
         </p>
 
         <p className={styles.bookingNotice}>
-          Booking Notice:
-          Walk-ins are welcome!
-          For groups, please book ahead so we can guarantee quality service, sufficient food & refreshments, and comfortable accommodation arrangements.
+          Booking Notice: Walk-ins are welcome! For groups, please book in advance.
         </p>
 
         <div className={styles.floatingBadge}>
           <CalendarRange size={22} color="#5c3b23" />
-          <h1 className={styles.badgeText}>
-            Book An Experience
-          </h1>
+          <h1 className={styles.badgeText}>Book An Experience</h1>
         </div>
-
-        {/* initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} */}
       </div>
 
-      {/* Scroll Indicator */}
-      {/* <div className={styles.scrollIndicator}>
-        <div className={styles.scrollOuter}>
-          <div className={styles.scrollInner}></div>
-        </div>
-      </div> */}
+      {/* Progress Bars */}
+      <div className={styles.progressWrapper}>
+        {
+          mediaDb.map((_, idx) => (
+              <div key={idx} className={styles.progressTrack} onClick={() => jumpToSlide(idx)}>
+                <div className={`${styles.progressBar} ${idx === current ? styles.activeProgress : ""}`}
+                  style={{ animationDuration: idx === current ? `${duration}ms` : "0ms",}}/>
+              </div>
+            ))
+        }
+      </div>
+
+      {/* Controls */}
+      <div className={styles.controlPanel}>
+        <button onClick={prevSlide}>
+          <ChevronUp size={18} />
+        </button>
+
+        <button onClick={() => setIsPaused((p) => !p)}>
+          { isPaused ? <Play size={18} /> : <Pause size={18} /> }
+        </button>
+
+        <button onClick={nextSlide}>
+          <ChevronDown size={18} />
+        </button>
+      </div>
     </section>
   )
 }
 
 export default Hero
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import Image from "next/image"
-
-// // Styles
-// import styles from "./hero.module.css"
-
-// // Assets : Images
-// import heroImage from "../../../../public/arealphoto.jpg"
-// // hero_kwaterry
-
-// const Hero = () => {
-//   return (
-//     <section id="home" className={styles.heroSection}>
-//       {/* Background Image with Parallax */}
-//       <Image  
-//       src={heroImage}
-//   alt="hero"
-//   fill
-//   className={styles.parallax}
-//   unoptimized
-//   priority
-//   quality={100} />
-//       {/* Overlay */}
-//       <div className={styles.overlay}></div>
-
-//       {/* Hero Pattern */}
-//       <div className={styles.heroPattern}></div>
-
-//       {/* Content */}
-//       <div className={styles.heroContent}>
-//         <h1 className={styles.heroTitle}>
-//           Authentic Rural Zimbabwean Experience
-//         </h1>
-        
-//         <p className={styles.heroSubtitle}>
-//           Discover the heart of Zimbabwe through traditional food, cultural immersion, and unforgettable rural experiences at KwaTerry.
-//         </p>
-
-//         {/* Floating Badge */}
-//         <div className={styles.floatingBadgeWrapper}>
-//           <div className={styles.floatingBadge}>
-//             <div className={styles.badgeDot}></div>
-//             <span className={styles.badgeText}>Authentic Cultural Experience</span>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Scroll Indicator */}
-//       <div className={styles.scrollIndicator}>
-//         <div className={styles.scrollOuter}>
-//           <div className={styles.scrollInner}></div>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
-// export default Hero

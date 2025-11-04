@@ -24,12 +24,6 @@
   background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7), rgba(0, 0, 0, .5));
 }
 
-.heroPattern {
-  position: absolute;
-  inset: 0;
-  opacity: 0.3;
-}
-
 .heroContent {
   position: relative;
   z-index: 10;
@@ -263,3 +257,77 @@
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+
+/* Progress Bars */
+.progressWrapper {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  gap: 6px;
+  padding: 0 20px;
+  z-index: 20;
+}
+
+.progressTrack {
+  flex: 1;
+  height: 7px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progressTrack:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+.progressBar {
+  width: 0%;
+  height: 100%;
+  background: rgba(255,183,77,1);
+  border-radius: 4px;
+  transform-origin: left;
+}
+
+.activeProgress {
+  animation: fillBar linear forwards;
+}
+
+@keyframes fillBar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* Controls */
+.controlPanel {
+  position: absolute;
+  right: 20px;
+  bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 25;
+}
+
+.controlPanel button {
+  width: 30;
+  height: 30;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(4px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.controlPanel button:hover {
+  background: rgba(255,183,77,0.85);
+  color: #5c3b23;
+}
+

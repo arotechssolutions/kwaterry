@@ -4,8 +4,8 @@
   left: 0;
   right: 0;
   z-index: 50;
-  /* background-color: #fbf6e9e6;  */
-  /* backdrop-filter: blur(8px); */
+  background-color: rgba(251, 246, 233, 1); 
+  backdrop-filter: blur(8px);
   /* border-bottom: 1px solid var(--border-color); */
 }
 
@@ -47,18 +47,16 @@
   justify-content: center;
 
   cursor: pointer;
+  color: #5c3b23;
   
-  
-  /* background-color: transparent; */
-
   transition: all 0.2s;
 
-
   backdrop-filter: blur(8px);
-    color: #fff;
-    background-color: rgba(255, 255, 255, .1);
-    border: 1px solid rgba(255, 255, 255, .2);
-    border-radius: 5px;
+  background-color: rgba(255, 255, 255, .1);
+  border: 1px solid #9f7a60;
+  border-radius: 5px;
+
+  background: transparent;
 }
 
 .socialButton:hover {
@@ -67,11 +65,11 @@
 }
 
 .lucideIcon {
-  color: var(--white);
+  color: #5c3b23;
 }
 
 .socialButton:hover > .lucideIcon {
-  color: #5c3b23;
+  color: white;
 }
 
 
