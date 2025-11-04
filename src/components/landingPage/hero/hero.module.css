@@ -138,6 +138,8 @@
   background: rgba(255, 183, 77, .8);
   border-radius: 5px;
 
+  animation: shake 2.5s infinite ease-in-out;
+
   color: #5c3b23;
   cursor: pointer;
 
