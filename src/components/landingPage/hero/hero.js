@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
+import { CalendarRange, Component } from "lucide-react"
 
 // Styles
 import styles from "./hero.module.css"
@@ -23,7 +24,6 @@ const mediaDb = [
   { type: "image", src: "/newphotos/whitescooking.webp" },
 ]
 
-
 const Hero = () => {
   const [current, setCurrent] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
@@ -40,43 +40,18 @@ const Hero = () => {
   const currentMedia = mediaDb[current]
 
   return (
-    <section
-      id="home"
-      className={styles.heroSection}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <section id="home" className={styles.heroSection} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
       <AnimatePresence mode="wait">
-        <motion.div
-          key={currentMedia.src}
-          className={styles.mediaWrapper}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.8, ease: "easeInOut" }}
-        >
-          {currentMedia.type === "image" ? (
-            <Image
-              src={currentMedia.src}
-              alt="KwaTerry Media"
-              fill
-              className={styles.parallax}
-              unoptimized
-              priority
-              quality={100}
-            />
-          ) : (
-            <video
-              key={currentMedia.src}
-              className={styles.parallax}
-              autoPlay
-              loop
-              muted
-              playsInline
-            >
+        <motion.div key={currentMedia.src} className={styles.mediaWrapper} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1.8, ease: "easeInOut" }}>
+          {
+            currentMedia.type === "image" && <Image src={currentMedia.src} alt="KwaTerry Media" fill className={styles.parallax} unoptimized priority quality={100}/>
+          }
+          {
+            currentMedia.type === "video" && <video key={currentMedia.src} className={styles.parallax} autoPlay loop muted playsInline>
               <source src={currentMedia.src} type="video/mp4" />
             </video>
-          )}
+          
+          }
         </motion.div>
       </AnimatePresence>
 
@@ -92,12 +67,20 @@ const Hero = () => {
           and unforgettable rural experiences at KwaTerry.
         </p>
 
-        <div className={styles.floatingBadgeWrapper}>
-          <div className={styles.floatingBadge}>
-            <div className={styles.badgeDot}></div>
-            <span className={styles.badgeText}>Authentic Cultural Experience</span>
-          </div>
+        <p className={styles.bookingNotice}>
+          Booking Notice:
+          Walk-ins are welcome!
+          For groups, please book ahead so we can guarantee quality service, sufficient food & refreshments, and comfortable accommodation arrangements.
+        </p>
+
+        <div className={styles.floatingBadge}>
+          <CalendarRange size={22} color="#5c3b23" />
+          <h1 className={styles.badgeText}>
+            Book An Experience
+          </h1>
         </div>
+
+        {/* initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} */}
       </div>
 
       {/* Scroll Indicator */}
