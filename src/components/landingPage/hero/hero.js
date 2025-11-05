@@ -182,7 +182,7 @@ const Hero = () => {
               Booking Notice: Walk-ins are welcome! For groups, please book in advance.
             </p>
 
-            <p className={styles.locationText}>
+            <div className={styles.locationText}>
               <div className={styles.socialButton}>
                 <Phone size={15} className={styles.lucideIcon} />
               </div>
@@ -191,7 +191,7 @@ const Hero = () => {
                 <MessageCircleMore size={15} className={styles.lucideIcon} />
               </div>
               +263 772 123 456
-            </p>
+            </div>
 
             <div className={styles.heroCta}>
               <div className={styles.floatingBadge}>

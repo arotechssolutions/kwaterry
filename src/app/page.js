@@ -1,6 +1,7 @@
 // Components
 import Hero from "@/components/landingPage/hero/hero"
 import SocialProof from "@/components/landingPage/socialProof/socialProof"
+import Accommodation from "@/components/landingPage/accommodation/accommodation"
 import Menu from "@/components/landingPage/menu/menu"
 import Activities from "@/components/landingPage/activities/activities"
 import Footer from "@/components/landingPage/footer/footer"
@@ -12,7 +13,7 @@ const Index = () => {
     <main>
       <Hero />
       <About />
-      {/* <SocialProof /> */}
+      <Accommodation />
       <SP />
       <Menu />
       <Activities />

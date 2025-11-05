@@ -1,0 +1,65 @@
+.socialProofSection {
+  padding: 5rem 0;
+  /* background: linear-gradient(135deg, #F59E0B, #EF4444);  */
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(90deg, #bf6840, #e9c763);
+  background: var(--white);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.headerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFD700; /* golden */
+
+  
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+
+  font-size: var(--bgfs); /* text-sm */
+  font-family: var(--ff-n);
+  font-weight: 600;
+  letter-spacing: 0.05em; /* tracking-wide */
+
+  background: rgba(255, 183, 77, .2);
+  padding: 5px 12px;
+  border-radius: 5px;
+  backdrop-filter: blur(3px);
+}
+
+.galleryTitle {
+  font-family: var(--ff-gst);
+  font-size: var(--fs-hd);
+  font-weight: 500;
+
+  color: var(--black);
+}
+
+
+.highlight {
+  color: #5c3b23;
+}
+
+
+.headerText {
+  font-size: var(--fs-1125);
+  font-family: var(--ff-gst);
+  color: #9f7a60;
+  max-width: 42rem;
+  margin: 0 auto;
+}
