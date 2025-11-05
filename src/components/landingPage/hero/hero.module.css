@@ -435,3 +435,40 @@
   color: #5c3b23;
 }
 
+.socialButton {
+  height: 30px;
+  width: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  color: #5c3b23;
+  color: #ffffff;
+  
+  transition: all 0.2s;
+
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, .1);
+  border: 1px solid #9f7a60;
+  border-radius: 5px;
+
+  background: transparent;
+}
+
+.socialButton:hover {
+  background-color: rgba(255,255,255,0.1);
+  background: rgba(255, 183, 77, 1);
+  border-color: rgba(255, 183, 77, 1);
+}
+
+.lucideIcon {
+  color: #5c3b23;
+  color: #ffffff;
+}
+
+.socialButton:hover > .lucideIcon {
+  color: white;
+}
+

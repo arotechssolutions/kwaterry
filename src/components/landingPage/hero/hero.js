@@ -5,7 +5,7 @@ import Image from "next/image"
 
 // Assets
 import { motion, AnimatePresence } from "framer-motion"
-import { CalendarRange, MapPin, Pause, SquareArrowOutUpRight, Play, ChevronLeft, ChevronRight } from "lucide-react"
+import { CalendarRange, Phone, MessageCircleMore, Pause, SquareArrowOutUpRight, Play, ChevronLeft, ChevronRight } from "lucide-react"
 
 // Styles
 import styles from "./hero.module.css"
@@ -129,7 +129,14 @@ const Hero = () => {
             </p>
 
             <p className={styles.locationText}>
-              <MapPin size={22} color="#FFFFFF" /> Village 6, Mhondoro Ngezi, Zimplats
+              <div className={styles.socialButton}>
+                <Phone size={15} className={styles.lucideIcon} />
+              </div>
+                -
+              <div className={styles.socialButton}>
+                <MessageCircleMore size={15} className={styles.lucideIcon} />
+              </div>
+               +263 772 123 456
             </p>
 
             <div className={styles.heroCta}>

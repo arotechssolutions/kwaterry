@@ -22,7 +22,8 @@ const Navigation = () => {
           <div className={styles.address}>
             <Image src={logoImage} alt="KwaTerry Logo" className={styles.logoImage} />
             <p className={styles.locationText}>
-              <MapPin size={22} color="#5c3b23" style={{position:"relative", top:"-1px"}} /> Village 6, Mhondoro Ngezi, Zimplats
+              {/* <MapPin size={22} color="#5c3b23" style={{position:"relative", top:"-1px"}} />  */}
+              Village 6, Mhondoro Ngezi, Zimplats
             </p>
           </div>
 
