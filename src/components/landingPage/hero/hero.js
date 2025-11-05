@@ -15,6 +15,7 @@ import Navigation from "@/components/landingPage/navigation/navigation"
 import Overlay from "@/components/landingPage/overlay/overlay"
 
 const mediaDb = [
+  { type: "video", src: "/zimbhovid.mp4" },
   { type: "image", src: "/arealphoto.jpg" },
   { type: "image", src: "/newphotos/vwgtcars.webp" },
   { type: "image", src: "/newphotos/buffet.webp" },
@@ -37,7 +38,7 @@ const Hero = () => {
   const [overlayInfo, setOverlayInfo] = useState("")
   const [description, setDescription] = useState(descriptions[0])
 
-  const duration = 6000
+  const duration = 60000
 
   const openOverlay = () => setIsOverlayOpen(true)
   const pauseAnimation = () => setIsPaused(true)
