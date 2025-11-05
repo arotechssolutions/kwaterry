@@ -27,8 +27,12 @@
 
 .infoTag {
   width: max-content;
+  height: 24px;
+  width: 45px;
 
-  padding: 3px 8px 6px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background-color: var(--black);
   border: 1px solid var(--white);

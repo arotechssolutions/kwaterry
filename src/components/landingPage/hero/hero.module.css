@@ -1,6 +1,6 @@
 .heroSection {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,8 +39,15 @@
   text-align: center;
   max-width: 64rem; /* 4xl */
   margin: 0 auto;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
   animation: fade-in 1s ease forwards;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 15px;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .heroTitle {
@@ -49,7 +56,7 @@
   font-size: 2.25rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
   text-wrap: balance;
   animation: fade-in-left 1s ease forwards;
 }
@@ -81,54 +88,28 @@
   animation: fade-in-right 1s ease forwards;
 }
 
-.buttonGroup {
+/* from here */
+
+.heroCta {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  animation: scale-in 0.5s ease forwards;
+  flex-flow: column nowrap;
+  gap: 10px;
+
+  width: 100%;
+  
+
+  margin: auto auto;
 }
 
-@media (min-width: 640px) {
-  .buttonGroup {
-    flex-direction: row;
+@media screen and (min-width: 570px) {
+  .heroCta {
+    flex-flow: row nowrap;
+    justify-content: center;
   }
 }
 
-.reserveButton {
-  font-weight: 500;
-  font-size: var(--fs-75); /* text-lg */
-  font-family: var(--ff-n);
-  padding: 1rem 2rem; /* px-8 py-4 */
-  background-color: #bf6840;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.reserveButton:hover {
-  box-shadow: 0 4px 6px 5c3b23; /* shadow-earth approximation */
-  transform: scale(1.05);
-}
-
-.learnButton {
-  font-weight: 500;
-  font-size: var(--fs-75);
-  font-family: var(--ff-int);
-  padding: 1rem 2rem;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #fff;
-  background-color: transparent;
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
-}
-
-.learnButton:hover {
-  background-color: rgba(255,255,255,0.1);
-}
-
-/* from here */
-.floatingBadge {
+.floatingBadge,
+.learnMore {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,12 +122,10 @@
   box-shadow: 0 0px 10px rgba(255, 183, 77, 0.35), 0 0px 6px rgba(0, 0, 0, 0.18);
   border-radius: 5px;
 
-  animation: shake 2.5s infinite ease-in-out;
+  /* animation: shake 2.5s infinite ease-in-out; */
 
   color: #5c3b23;
   cursor: pointer;
-
-  margin: auto auto;
 }
 
 .floatingBadge:hover {
@@ -168,9 +147,13 @@
   }
 }
 
-@media screen and (min-width: 531px) {
+@media screen and (min-width: 570px) {
   .floatingBadge {
     width: 360px;
+  }
+
+  .learnMore {
+    width: 160px;
   }
 }
 
@@ -181,7 +164,7 @@
   color: var(--white);
   align-items: center;
 
-  margin: 1.5rem;
+  /* margin: 1.5rem; */
 
   font-style: italic;
   font-weight: 500;
@@ -193,6 +176,34 @@
   margin-left: auto;
   margin-right: auto;
   line-height: 1.75rem;
+}
+
+.locationText {
+  font-size: var(--fs-875);
+  font-family: var(--ff-gst);
+  margin-left: 35px;
+  opacity: 0.9;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  align-items: center;
+}
+
+.reviewsLink {
+  font-size: 14px;
+  margin-top: 6px;
+  color: #ffb74d;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .2s;
+
+  font-family: var(--ff-gst);
+}
+.reviewsLink:hover {
+  opacity: .8;
 }
 
 .badgeText {
@@ -313,12 +324,18 @@
 /* Controls */
 .controlPanel {
   position: absolute;
-  left: 20px;
+  /* left: 20px; */
   bottom: 15px;
   display: flex;
   flex-direction: row;
   gap: 8px;
   z-index: 25;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .controlPanel button,
@@ -327,7 +344,7 @@
   height: 30;
   border-radius: 50%;
   background: rgba(0,0,0,0.55);
-  border: 1px solid rgba(255,255,255,0.3);
+  /* border: 1px solid rgba(255,255,255,0.3); */
   backdrop-filter: blur(4px);
   color: white;
   display: flex;
@@ -335,6 +352,22 @@
   justify-content: center;
   cursor: pointer;
   transition: .2s;
+}
+
+.chevrons {
+  color: white;
+}
+
+.navBtns:hover {
+  background-color: rgba(255, 183, 77, 1);
+}
+
+.navBtns:hover > .chevrons {
+  color: '';
+}
+
+.navBtns:active {
+  transform: scale(0.90);
 }
 
 .pauseBtn {
@@ -347,10 +380,39 @@
   color: var(--black) !important;
 
   height: 24px !important;
+  width: 40px !important;
 
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.infoTag {
+  width: max-content;
+  height: 24px;
+  width: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* padding: 3px 8px 6px !important; */
+
+  background-color: var(--black);
+  border: 1px solid var(--white);
+  border-radius: 10px;
+
+  cursor: pointer;
+  color: var(--white);
+
+  font-family: var(--ff-gst);
+  font-size: 0.65rem;
+  font-weight: 450;
+  
+  background-color: rgba(0, 0, 0, .8) !important;
+  box-shadow: 0 0 0 .5px #f6f6f6 !important;
+
+  z-index: 10;
 }
 
 .navBtns {

@@ -6,8 +6,6 @@ import Image from "next/image"
 import styles from "./image.module.css"
 
 const GalleryImage = ({ src, width, height }) => {
-  console.log(width, height)
-
   if(width && height){
     return (
       <section className={styles.imageCover}>
