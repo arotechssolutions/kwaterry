@@ -21,6 +21,68 @@
   height: 4rem; /* h-16 */
 }
 
+.followUsText {
+  font-family: var(--ff-gst);
+  font-size: var(--fs-875);
+
+  color:#5c3b23;
+  margin-right: 10px;
+}
+
+.bookNowButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  margin-left: 40px;
+
+  width: 150px;
+  height: 38px;
+
+  background: rgba(255, 183, 77, .9);
+  border-radius: 4px;
+
+  color: #5c3b23;
+  cursor: pointer;
+
+  font-family: var(--ff-gst);
+  font-size: var(--fs-875);
+  color:#5c3b23;
+
+  padding: 0 20px;
+
+}
+
+.address {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.locationText {
+  font-size: var(--fs-875);
+  font-family: var(--ff-gst);
+  opacity: 0.9;
+  color: #5c3b23;
+  font-weight: 400;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+
+  position: relative;
+  top: 1px;
+}
+
+.badgeText {
+  font-family: var(--ff-gst);
+  font-size: var(--fs-875);
+  position: relative;
+  top: 1.5px;
+}
+
 .logoImage {
   color: #5c3b23;
 
@@ -34,6 +96,7 @@
 
 .socialButtons {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 

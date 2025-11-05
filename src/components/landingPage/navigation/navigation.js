@@ -6,10 +6,12 @@ import Image from "next/image"
 import styles from "./navigation.module.css"
 
 // Assets : Icons
-import { Facebook, Instagram, Twitter } from "lucide-react"
+import { CalendarRange, Facebook, MapPin, Instagram, Twitter } from "lucide-react"
 
 // Assets : Images
 import logoImage from "../../../../public/kwaterry_logo.png"
+
+
 
 const Navigation = () => {
   return (
@@ -17,9 +19,15 @@ const Navigation = () => {
       <div className={styles.container}>
         <div className={styles.navbarInner}>
           {/* Logo */}
-          <Image src={logoImage} alt="KwaTerry Logo" className={styles.logoImage} />
+          <div className={styles.address}>
+            <Image src={logoImage} alt="KwaTerry Logo" className={styles.logoImage} />
+            <p className={styles.locationText}>
+              <MapPin size={22} color="#5c3b23" style={{position:"relative", top:"-1px"}} /> Village 6, Mhondoro Ngezi, Zimplats
+            </p>
+          </div>
 
           <div className={styles.socialButtons}>
+            <p className={styles.followUsText}>Follow Us - </p>
             <div className={styles.socialButton}>
               <Facebook size={15} className={styles.lucideIcon} />
             </div>
@@ -29,6 +37,11 @@ const Navigation = () => {
             <div className={styles.socialButton}>
               <Twitter size={15} className={styles.lucideIcon} />
             </div>
+
+            <button className={styles.bookNowButton}>
+              <CalendarRange size={22} color="#5c3b23" className={styles.lucideIcon} />
+              <p className={styles.badgeText}>Book Now</p>
+            </button>
           </div>
         </div>
       </div>
