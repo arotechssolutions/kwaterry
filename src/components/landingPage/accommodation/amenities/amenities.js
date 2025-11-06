@@ -11,7 +11,7 @@ export default function AmenitiesSection() {
   const amenities = [
     { icon: <MdKitchen color="#5c3b23" />, label: "Kitchen" },
     { icon: <FaWifi color="#5c3b23" />, label: "Wifi" },
-    { icon: <MdWork color="#5c3b23" />, label: "Dedicated workspace" },
+    // { icon: <MdWork color="#5c3b23" />, label: "Dedicated workspace" },
     { icon: <FaCar color="#5c3b23" />, label: "Free parking" },
     // { icon: <FaSwimmer />, label: "Shared pool" },
     // { icon: <FaTv />, label: "TV with Netflix" },
@@ -23,7 +23,7 @@ export default function AmenitiesSection() {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.h2}>What this place offers</h2>
+      <h2 className={styles.galleryTitle}>Offering</h2>
       <div className={styles.grid}>
         {amenities.map((item, idx) => (
           <div key={idx} className={styles.amenity}>

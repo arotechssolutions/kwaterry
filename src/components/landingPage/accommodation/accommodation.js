@@ -16,20 +16,6 @@ import LayoutTwo from "../gallery/layouts/layoutTwo/layoutTwo"
 import Amenities from "./amenities/amenities"
 import BookingCard from "./reserveCard/reserveCard"
 
-// Assets : Photos
-const images = [
-  '/mald7.png',
-  '/mald6.jpg',
-  '/mald4.jpg',
-  '/mald5.jpeg'
-]
-
-const array_of_3 = [
-  '/mald3.jpg',
-  '/mald2.jpg',
-  '/mald1.jpg'
-]
-
 // Overlay
 import Overlay from "../imageOverlay/imageOverlay"
 
@@ -114,7 +100,6 @@ function clusterImagesPreserveOrder(imagesDb, layoutSequence) {
 }
 
 const sections = clusterImagesPreserveOrder(imagesDb, layoutSequence)
-
 
 const Accommodation = () => {
   const scrollerRef = useRef(null)

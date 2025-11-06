@@ -17,7 +17,7 @@ export default function BookingCard() {
           <input className={styles.input} type="date" />
         </div>
       </div>
-      <div className={styles.inputBox}>
+      {/* <div className={styles.inputBox}>
         <label className={styles.label} >Guests</label>
         <select className={styles.select} >
           <option>1 guest</option>
@@ -25,9 +25,9 @@ export default function BookingCard() {
           <option>3 guests</option>
           <option>4 guests</option>
         </select>
-      </div>
+      </div> */}
       <button className={styles.checkBtn}>Check availability</button>
-      <p className={styles.minStay}>Minimum stay: 2 nights</p>
+      <p className={styles.minStay}>$45/Night</p>
     </div>
   );
 }
