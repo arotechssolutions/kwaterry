@@ -30,10 +30,13 @@
 }
 
 .label {
-  font-size: 0.8rem;
+
+  font-size: var(--fs-875);
   font-family: var(--ff-gst);
+
   color: #555;
   margin-bottom: 0.2rem;
+  padding-left: 8px;
 }
 
 .input, .select {
