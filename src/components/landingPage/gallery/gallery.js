@@ -14,10 +14,10 @@ import LayoutOne from "./layouts/layoutOne/layoutOne"
 // Overlay
 import Overlay from "../imageOverlay/imageOverlay"
 
-// 🔹 Helper to shuffle arrays
+// Helper to shuffle arrays
 const shuffleArray = (arr) => [...arr].sort(() => Math.random() - 0.5)
 
-// 🔹 Images database
+// Images database
 const imagesDb = [
   "/morenew/roadrunnerrimwe.jpg",
   "/morenew/roadrunner.jpg",
@@ -78,7 +78,7 @@ const imagesDb = [
   "/wiseowl/wise_owl_foodtable.jpg",
 ]
 
-// 🔹 Define layout sizes
+// Define layout sizes
 export const layoutImageSizes = {
   LayoutFour: [
     { width: 400, height: 300 },
@@ -109,7 +109,7 @@ export const layoutImageSizes = {
   LayoutOne: [{ width: 400, height: 500 }],
 }
 
-// 🔹 Layout sequence defined *after* all imports
+// Layout sequence defined *after* all imports
 const layoutSequence = [
   { component: LayoutFour, count: 4 },
   { component: LayoutFourOpp, count: 4 },
@@ -119,7 +119,7 @@ const layoutSequence = [
   { component: LayoutOne, count: 1 },
 ]
 
-// 🔹 Cluster images into sections
+// Cluster images into sections
 function clusterImagesPreserveOrder(imagesDb, layoutSequence) {
   const sections = []
   let index = 0
@@ -146,7 +146,7 @@ function clusterImagesPreserveOrder(imagesDb, layoutSequence) {
 
 const sections = clusterImagesPreserveOrder(imagesDb, layoutSequence)
 
-// 🔹 Main Gallery component
+// Main Gallery component
 const Gallery = () => {
   const scrollerRef = useRef(null)
   const scrollInterval = useRef(null)

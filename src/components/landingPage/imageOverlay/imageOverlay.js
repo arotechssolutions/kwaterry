@@ -2,8 +2,13 @@
 
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
-import { X, ChevronLeft, ChevronRight } from "lucide-react"
+
 import { motion, AnimatePresence } from "framer-motion"
+
+// Assets : Icons
+import { X, ChevronLeft, ChevronRight } from "lucide-react"
+
+// Styles
 import styles from "./imageOverlay.module.css"
 
 const Overlay = ({ close, image, imagesDb = [], description = "" }) => {

@@ -31,8 +31,6 @@ const SocialProof = () => {
 
         <MyGallery />
 
-        <section className={styles.viewFullGallery}>See Full Gallery <ChevronRight size={15} className={styles.arrowRight} /> </section>
-
         {/* Bottom CTA */}
         {/* <div className={styles.bottomCTA}>
           <div className={styles.bottomCTABadge}>
