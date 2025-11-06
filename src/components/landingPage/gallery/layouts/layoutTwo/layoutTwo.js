@@ -7,15 +7,15 @@ import Img from "../image/image"
 // Sizes
 import { layoutImageSizes } from "@/components/landingPage/gallery/gallery"
 
-const LayoutTwo = ({ images }) => {
+const LayoutTwo = ({ images, onImageClick }) => {
   const sizes = layoutImageSizes.LayoutTwo
   return (
     <div className={styles.component}>
       <div className={styles.largeImage}>
-        <Img src={images[0]} {...sizes[0]} />
+        <Img onImageClick={onImageClick} src={images[0]} {...sizes[0]} />
       </div>
       <div className={styles.smallImage}>
-        <Img src={images[1]} {...sizes[1]}/>
+        <Img onImageClick={onImageClick} src={images[1]} {...sizes[1]}/>
       </div>
     </div>
   )

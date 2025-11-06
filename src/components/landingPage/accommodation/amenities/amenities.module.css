@@ -1,0 +1,45 @@
+.container {
+  /* margin-top: 2rem; */
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 3.5rem;
+}
+
+.h2 {
+  font-size: 1.5rem;
+  font-family: var(--ff-gst);
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem 2rem;
+}
+
+.amenity {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: var(--fs-1);
+  font-family: var(--ff-gst);
+  color: #333;
+}
+
+.amenity svg {
+  font-size: 1.4rem;
+}
+
+.showBtn {
+  margin-top: 1.5rem;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: var(--ff-gst);
+}
+
+.showBtn:hover {
+  background: #f0f0f0;
+}

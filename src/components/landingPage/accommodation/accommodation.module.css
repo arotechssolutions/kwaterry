@@ -63,3 +63,105 @@
   max-width: 42rem;
   margin: 0 auto;
 }
+
+.gallerySection {
+    height: 500px;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 20px;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  
+    overflow-x: scroll;
+    white-space: nowrap;
+    scrollbar-width: none;
+    scroll-behavior: auto; /* NOT smooth — we control smoothness via JS */
+
+    border-radius: 3px;
+    background-color: var(--white);
+
+    margin: auto;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.gallerySection::-webkit-scrollbar { display: none; }
+
+.gallerySection::-webkit-scrollbar {
+  display: none;
+}
+
+.gallerySection > * {
+  flex: 0 0 auto;
+}
+
+.fadeLeft, .fadeRight {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+  height: 100%;
+  z-index: 5;
+
+  /* Default fade width for desktop */
+  width: min(12vw, 160px);
+}
+
+/* Left fade */
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+/* Right fade */
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .fadeLeft, .fadeRight {
+    width: min(20vw, 90px);
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .fadeLeft, .fadeRight {
+    width: min(15vw, 120px);
+  }
+}
+
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 2rem auto;
+  gap: 2rem;
+
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 1024px){
+  .main {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+}
+
+.left {
+  flex: 2;
+}
+
+.right {
+  flex: 1;
+  position: sticky;
+  top: 100px;
+}
+

@@ -1,12 +1,9 @@
 "use client"
 
-// React
-import { useRef, useEffect } from "react"
-
-// Styles
+import { useRef, useEffect, useState } from "react"
 import styles from "./gallery.module.css"
 
-// Layouts
+// Layout imports
 import LayoutFour from "./layouts/layoutFour/layoutFour"
 import LayoutFourOpp from "./layouts/layoutFourOpp/layoutFourOpp"
 import LayoutThree from "./layouts/layoutThree/layoutThree"
@@ -14,6 +11,74 @@ import LayoutThreeOpp from "./layouts/layoutThreeOpp/layoutThreeOpp"
 import LayoutTwo from "./layouts/layoutTwo/layoutTwo"
 import LayoutOne from "./layouts/layoutOne/layoutOne"
 
+// Overlay
+import Overlay from "../imageOverlay/imageOverlay"
+
+// 🔹 Helper to shuffle arrays
+const shuffleArray = (arr) => [...arr].sort(() => Math.random() - 0.5)
+
+// 🔹 Images database
+const imagesDb = [
+  "/morenew/roadrunnerrimwe.jpg",
+  "/morenew/roadrunner.jpg",
+  "/morenew/outsidecarpark.webp",
+  "/morenew/treehouse.webp",
+  "/morenew/shitboys.webp",
+  "/morenew/gango.webp",
+  "/morenew/quadbikes.webp",
+  "/morenew/kamuchina.webp",
+  "/morenew/proposal.webp",
+  "/morenew/servedfoodmix.webp",
+  "/morenew/servedfish.webp",
+  "/morenew/sunsettreehouse.webp",
+  "/morenew/mukombe.webp",
+  "/morenew/bakyard.webp",
+  "/morenew/whitewithhen.webp",
+  "/newphotos/buffet.webp",
+  "/newphotos/carpark.webp",
+  "/newphotos/crowdatentrance.webp",
+  "/newphotos/firstgazebo.webp",
+  "/newphotos/firstgazebosummer.webp",
+  "/newphotos/greenlawn.jpg",
+  "/newphotos/motorbikes.jpg",
+  "/newphotos/servedfood.jpg",
+  "/newphotos/servedfood.webp",
+  "/newphotos/treehouse.webp",
+  "/newphotos/vintageterry.webp",
+  "/newphotos/visitoratentrance.webp",
+  "/newphotos/vwgtcars.webp",
+  "/newphotos/whitescooking.webp",
+  "/lordbrightoncollege/atbanner.jpg",
+  "/lordbrightoncollege/bus.jpg",
+  "/lordbrightoncollege/catchinghuku.jpg",
+  "/lordbrightoncollege/yazobatwa.jpg",
+  "/lordbrightoncollege/runningbird.jpg",
+  "/lordbrightoncollege/pamutohwe.jpg",
+  "/buses/bus.jpg",
+  "/buses/chickeninfc.jpg",
+  "/buses/dynamos.jpg",
+  "/buses/nombeyawora.jpg",
+  "/celebs/madamboss.jpg",
+  "/celebs/mbeu.jpg",
+  "/celebs/nishat.jpg",
+  "/celebs/nuttyo.jpg",
+  "/celebs/poptain.jpg",
+  "/celebs/footballer.jpg",
+  "/celebs/comicelderonbike.jpg",
+  "/celebs/babanamaichisamba.jpg",
+  "/vimbaihigh/bus.jpg",
+  "/vimbaihigh/infield.jpg",
+  "/vimbaihigh/vibing.jpg",
+  "/vimbaihigh/withterry.jpg",
+  "/wiseowl/on_bike_2.jpg",
+  "/wiseowl/on_bike_3.jpg",
+  "/wiseowl/on_bike.jpg",
+  "/wiseowl/teacher_with_kids.jpg",
+  "/wiseowl/wise_owl_bus.jpg",
+  "/wiseowl/wise_owl_foodtable.jpg",
+]
+
+// 🔹 Define layout sizes
 export const layoutImageSizes = {
   LayoutFour: [
     { width: 400, height: 300 },
@@ -41,80 +106,10 @@ export const layoutImageSizes = {
     { width: 400, height: 500 },
     { width: 200, height: 500 },
   ],
-  LayoutOne: [
-    { width: 400, height: 500 },
-  ]
+  LayoutOne: [{ width: 400, height: 500 }],
 }
 
-const imagesDb = [
-  '/morenew/roadrunnerrimwe.jpg',
-  '/morenew/roadrunner.jpg',
-  '/morenew/outsidecarpark.webp',
-  '/morenew/treehouse.webp',
-  '/morenew/shitboys.webp',
-  '/morenew/gango.webp',
-  '/morenew/quadbikes.webp',
-  '/morenew/kamuchina.webp',
-  '/morenew/proposal.webp',
-  '/morenew/servedfoodmix.webp',
-  '/morenew/servedfish.webp',
-  '/morenew/sunsettreehouse.webp',
-  '/morenew/mukombe.webp',
-  '/morenew/bakyard.webp',
-  '/morenew/whitewithhen.webp',
-
-  "/newphotos/buffet.webp", //good
-  "/newphotos/carpark.webp",
-  "/newphotos/crowdatentrance.webp",
-  "/newphotos/firstgazebo.webp",
-  "/newphotos/firstgazebosummer.webp",
-  "/newphotos/greenlawn.jpg",
-  "/newphotos/motorbikes.jpg",
-  "/newphotos/servedfood.jpg",
-  "/newphotos/servedfood.webp",
-  "/newphotos/treehouse.webp",
-  "/newphotos/vintageterry.webp",
-  "/newphotos/visitoratentrance.webp",
-  "/newphotos/treehouse.webp",
-  "/newphotos/vintageterry.webp",
-  "/newphotos/visitoratentrance.webp",
-  "/newphotos/vwgtcars.webp",
-  "/newphotos/whitescooking.webp",
-
-  "/lordbrightoncollege/atbanner.jpg",
-  "/lordbrightoncollege/bus.jpg",
-  "/lordbrightoncollege/catchinghuku.jpg",
-  "/lordbrightoncollege/yazobatwa.jpg",
-  "/lordbrightoncollege/runningbird.jpg",
-  "/lordbrightoncollege/pamutohwe.jpg",
-
-  "/buses/bus.jpg",
-  "/buses/chickeninfc.jpg",
-  "/buses/dynamos.jpg",
-  "/buses/nombeyawora.jpg",
-
-  "/celebs/madamboss.jpg",
-  "/celebs/mbeu.jpg",
-  "/celebs/nishat.jpg",
-  "/celebs/nuttyo.jpg",
-  "/celebs/poptain.jpg",
-  "/celebs/footballer.jpg",
-  "/celebs/comicelderonbike.jpg",
-  "/celebs/babanamaichisamba.jpg",
-
-  "/vimbaihigh/bus.jpg",
-  "/vimbaihigh/infield.jpg",
-  "/vimbaihigh/vibing.jpg",
-  "/vimbaihigh/withterry.jpg",
-
-  "/wiseowl/on_bike_2.jpg",
-  "/wiseowl/on_bike_3.jpg",
-  "/wiseowl/on_bike.jpg",
-  "/wiseowl/teacher_with_kids.jpg",
-  "/wiseowl/wise_owl_bus.jpg",
-  "/wiseowl/wise_owl_foodtable.jpg",
-]
-
+// 🔹 Layout sequence defined *after* all imports
 const layoutSequence = [
   { component: LayoutFour, count: 4 },
   { component: LayoutFourOpp, count: 4 },
@@ -124,18 +119,15 @@ const layoutSequence = [
   { component: LayoutOne, count: 1 },
 ]
 
-// Shuffle helper
-const shuffleArray = (arr) => [...arr].sort(() => Math.random() - 0.5)
-
-// Shuffle only layout order — keep image order
+// 🔹 Cluster images into sections
 function clusterImagesPreserveOrder(imagesDb, layoutSequence) {
   const sections = []
   let index = 0
 
   while (index < imagesDb.length) {
     const shuffledLayouts = shuffleArray(layoutSequence)
-
     let assigned = false
+
     for (let layout of shuffledLayouts) {
       if (index + layout.count <= imagesDb.length) {
         const slice = imagesDb.slice(index, index + layout.count)
@@ -152,34 +144,25 @@ function clusterImagesPreserveOrder(imagesDb, layoutSequence) {
   return sections
 }
 
-// use new logic
 const sections = clusterImagesPreserveOrder(imagesDb, layoutSequence)
 
+// 🔹 Main Gallery component
 const Gallery = () => {
   const scrollerRef = useRef(null)
   const scrollInterval = useRef(null)
+  const AUTO_SCROLL_SPEED = 0.6
+  const [selectedImage, setSelectedImage] = useState(null)
 
-  const AUTO_SCROLL_SPEED = 0.6 // adjust speed
-
-  // ✅ Start auto scroll
   const startScroll = () => {
-    if (!scrollerRef.current) return
-    if (scrollInterval.current) return // prevent duplicates
-
+    if (!scrollerRef.current || scrollInterval.current) return
     scrollInterval.current = setInterval(() => {
       const el = scrollerRef.current
       if (!el) return
-
       el.scrollLeft += AUTO_SCROLL_SPEED
-
-      // ✅ Loop continuously
-      if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
-        el.scrollLeft = 0
-      }
-    }, 16) // ~60FPS feel
+      if (el.scrollLeft >= el.scrollWidth - el.clientWidth) el.scrollLeft = 0
+    }, 16)
   }
 
-  // ✅ Stop scrolling
   const stopScroll = () => {
     if (scrollInterval.current) {
       clearInterval(scrollInterval.current)
@@ -192,10 +175,13 @@ const Gallery = () => {
     return stopScroll
   }, [])
 
+  const handleImageClick = (imagePath) => {
+    setSelectedImage(imagePath)
+    stopScroll()
+  }
+
   return (
     <section className={styles.component}>
-      
-      {/* Fade overlays */}
       <div className={styles.fadeLeft}></div>
       <div className={styles.fadeRight}></div>
 
@@ -208,14 +194,31 @@ const Gallery = () => {
         {[...Array(2)].map((_, dupIndex) =>
           sections.map((section, i) => {
             const { Layout, images } = section
-            return <Layout key={`${dupIndex}-${i}`} images={images} />
+            const LayoutComponent = Layout
+            return (
+              <LayoutComponent
+                key={`${dupIndex}-${i}`}
+                images={images}
+                onImageClick={handleImageClick}
+              />
+            )
           })
         )}
       </section>
+
+      {selectedImage && (
+        <Overlay
+          imagesDb={imagesDb}
+          image={selectedImage}
+          description="Captured at Sunray Lodge — experience nature, culture, and comfort in one place."
+          close={() => {
+            setSelectedImage(null)
+            startScroll()
+          }}
+        />
+      )}
     </section>
   )
 }
-
-
 
 export default Gallery
